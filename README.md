@@ -161,7 +161,7 @@ _For more examples, please refer to the [Documentation](https://vormia.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [✓] Create responsive admin UI(https://github.com/vormia-cms/AdminTemplate)
+[✅] Create responsive admin UI(https://github.com/vormia-cms/AdminTemplate)
 - [ ] Develop a Laravel Admin
 - [ ] Develop themes marketplace
 - [ ] Develop extensions marketplace
