@@ -3,7 +3,7 @@
         <div class="sidebar-menu">
             <ul class="menu">
                 <li class="sidebar-item">
-                    <a href="{{ url('/dashboard') }}" class='sidebar-link'>
+                    <a href="{{ url('/vrm/dashboard') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill vrm-icon"></i>
                         <span>Dashboard</span>
                     </a>
@@ -22,19 +22,19 @@
                         </a>
                         <ul class="submenu active">
                             <li class="submenu-item active">
-                                <a href="{{ url('/blogs') }}">All</a>
+                                <a href="{{ url('/vrm/blogs') }}">All</a>
                             </li>
                             <li class="submenu-item">
-                                <a href="{{ url('/blogs/add') }}">New</a>
+                                <a href="{{ url('/vrm/blogs/add') }}">New</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="{{ url('/tags') }}">Tags</a>
+                                <a href="{{ url('/vrm/tags') }}">Tags</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="{{ url('/categories') }}">Categories</a>
+                                <a href="{{ url('/vrm/categories') }}">Categories</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="{{ url('/comments') }}">Comments</a>
+                                <a href="{{ url('/vrm/comments') }}">Comments</a>
                             </li>
                         </ul>
                     </li>

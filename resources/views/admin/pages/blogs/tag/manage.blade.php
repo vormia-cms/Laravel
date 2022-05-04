@@ -13,7 +13,7 @@
                 <div class="col-6 d-none d-md-block">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-end float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url('/vrm/dashboard') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Tags</li>
                         </ol>
                     </nav>
@@ -156,7 +156,7 @@
                                             <div class="row my-2">
                                                 <div class="action">
                                                                             <span>
-                                                                                <a href="{{ url('/tags/edit') }}">
+                                                                                <a href="{{ url('/vrm/tags/edit') }}">
                                                                                     <i class="bi bi-pencil"></i> Edit
                                                                                 </a>
                                                                             </span>
@@ -209,7 +209,7 @@
                                             <div class="row my-2">
                                                 <div class="action">
                                                                             <span>
-                                                                                <a href="{{ url('/tags/edit') }}">
+                                                                                <a href="{{ url('/vrm/tags/edit') }}">
                                                                                     <i class="bi bi-pencil"></i> Edit
                                                                                 </a>
                                                                             </span>
@@ -263,7 +263,7 @@
                                             <div class="row my-2">
                                                 <div class="action">
                                                                             <span>
-                                                                                <a href="{{ url('/tags/edit') }}">
+                                                                                <a href="{{ url('/vrm/tags/edit') }}">
                                                                                     <i class="bi bi-pencil"></i> Edit
                                                                                 </a>
                                                                             </span>

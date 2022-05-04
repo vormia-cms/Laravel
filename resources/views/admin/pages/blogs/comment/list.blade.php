@@ -13,7 +13,7 @@
                 <div class="col-6 d-none d-md-block">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-end float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url('/vrm/dashboard') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Comments</li>
                         </ol>
                     </nav>
@@ -33,7 +33,7 @@
                         <div class="card-body px-0 py-0">
                             <p>
                                 Comments under the blog post
-                                <a href="{{ url('/blogs/edit') }}" class="vrm-link">
+                                <a href="{{ url('/vrm/blogs/edit') }}" class="vrm-link">
                                     We close the core cms chapter and...
                                 </a>
 
@@ -157,7 +157,7 @@
                                             <div class="vrm-td-div">
                                                 <p class="vrm-font-13">
                                                     Reply the original comment from:
-                                                    <a href="{{ url('/comments/list') }}">
+                                                    <a href="{{ url('/vrm/comments/list') }}">
                                                         Jone Doe (superadmin) comment.
                                                     </a>
                                                 </p>
@@ -175,12 +175,12 @@
                                                                                 </a>
                                                                             </span>
                                                     <span>
-                                                                                <a href="{{ url('/comments/reply') }}">
+                                                                                <a href="{{ url('/vrm/comments/reply') }}">
                                                                                     <i class="bi bi-chat-quote"></i> Reply
                                                                                 </a>
                                                                             </span>
                                                     <span>
-                                                                                <a href="{{ url('/comments/edit') }}">
+                                                                                <a href="{{ url('/vrm/comments/edit') }}">
                                                                                     <i class="bi bi-pencil"></i> Edit
                                                                                 </a>
                                                                             </span>
@@ -235,12 +235,12 @@
                                                                                 </a>
                                                                             </span>
                                                     <span>
-                                                                                <a href="{{ url('/comments/reply') }}">
+                                                                                <a href="{{ url('/vrm/comments/reply') }}">
                                                                                     <i class="bi bi-chat-quote"></i> Reply
                                                                                 </a>
                                                                             </span>
                                                     <span>
-                                                                                <a href="{{ url('/comments/edit') }}">
+                                                                                <a href="{{ url('/vrm/comments/edit') }}">
                                                                                     <i class="bi bi-pencil"></i> Edit
                                                                                 </a>
                                                                             </span>

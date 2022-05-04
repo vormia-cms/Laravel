@@ -13,7 +13,7 @@
                 <div class="col-6 d-none d-md-block">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-end float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url('/vrm/dashboard') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Comment</li>
                         </ol>
                     </nav>
@@ -265,10 +265,10 @@
                                                     <div class="row mb-3" id="publish-reply-to">
                                                         <div class="col-12 vrm-font-13">
                                                             <span class="blog-text">Replying to:</span>
-                                                            <a href="{{ url('/comments/edit') }}" class="vrm-plug-btn vrm-link">Jone Doe (superadmin) comment.</a>
+                                                            <a href="{{ url('/vrm/comments/edit') }}" class="vrm-plug-btn vrm-link">Jone Doe (superadmin) comment.</a>
 
                                                             <span class="blog-text">on post:</span>
-                                                            <a href="{{ url('/blog/edit') }}" class="vrm-plug-btn vrm-link">We close the core cms chapter and...</a>
+                                                            <a href="{{ url('/vrm/blogs/edit') }}" class="vrm-plug-btn vrm-link">We close the core cms chapter and...</a>
                                                         </div>
                                                     </div>
                                                 </div>

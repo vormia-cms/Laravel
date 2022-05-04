@@ -13,7 +13,7 @@
                 <div class="col-6 d-none d-md-block">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-end float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url('/vrm/dashboard') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Comment</li>
                         </ol>
                     </nav>
@@ -37,10 +37,10 @@
                                     <div class="col-12">
                                         <p class="vrm-font-13">
                                             Replying to
-                                            <a href="{{ url('/comments/list') }}" class="vrm-link">
+                                            <a href="{{ url('/vrm/comments/list') }}" class="vrm-link">
                                                 Jone Doe (superadmin) comment,
                                             </a> on post
-                                            <a href="{{ url('/blogs/edit') }}" class="vrm-link">
+                                            <a href="{{ url('/vrm/blogs/edit') }}" class="vrm-link">
                                                 We close the core cms chapter and...
                                             </a>
                                         </p>
@@ -117,7 +117,7 @@
                             <div class="card-footer">
                                 <div class="row justify-content-between">
                                     <div class="col-lg-4 col-6">
-                                        <a href="{{ url('/comments/manage') }}" class="vrm-link vrm-color-red">Cancel</a>
+                                        <a href="{{ url('/vrm/comments/manage') }}" class="vrm-link vrm-color-red">Cancel</a>
                                     </div>
                                     <div class="col-lg-4 col-6">
                                         <button type="button" class="btn btn-sm btn-success w-100">

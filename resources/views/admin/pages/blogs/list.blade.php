@@ -8,7 +8,7 @@
                 <div class="col-md-6 col-sm-12">
                     <h3>
                         Blogs :
-                        <a href="{{ url('/blogs/add') }}" class="btn btn-primary">
+                        <a href="{{ url('/vrm/blogs/add') }}" class="btn btn-primary">
                             <!-- plus icon -->
                             New <i class="bi bi-plus"></i>
                         </a>
@@ -17,7 +17,7 @@
                 <div class="col-6 d-none d-md-block">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-end float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url('/vrm/dashboard') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Blogs</li>
                         </ol>
                     </nav>
@@ -145,7 +145,7 @@
                                 <td class="vrm-column text-bold-500 vrm-th-primary" vrm-colname="ID">20</td>
                                 <td class="vrm-column vrm-th-primary vrm-td-title" vrm-colname="Title">
                                     <div class="vrm-td-div">
-                                        <a href="{{ url('/blogs/edit') }}">
+                                        <a href="{{ url('/vrm/blogs/edit') }}">
                                             Hello welcome to the new vormia blog welcome to the new vormia welcome to the new vormia
                                         </a>
 
@@ -156,7 +156,7 @@
                                     <div class="row my-2">
                                         <div class="action">
                                                                     <span>
-                                                                        <a href="{{ url('/blogs/edit') }}">
+                                                                        <a href="{{ url('/vrm/blogs/edit') }}">
                                                                             <i class="bi bi-pencil"></i> Edit
                                                                         </a>
                                                                     </span>
@@ -201,7 +201,7 @@
                                 </td>
                                 <td class="vrm-column" vrm-colname="Comments">
                                                             <span>
-                                                                <a href="{{ url('/blogs/comment/list') }}">
+                                                                <a href="{{ url('/vrm/comment/list') }}">
                                                                     <i class="bi bi-chat-right-dots"> 1 </i>
                                                                 </a>
                                                             </span>
@@ -223,7 +223,7 @@
                                 <td class="vrm-column text-bold-500 vrm-th-primary" vrm-colname="ID">32</td>
                                 <td class="vrm-column vrm-th-primary vrm-td-title" vrm-colname="Title">
                                     <div class="vrm-td-div">
-                                        <a href="{{ url('/blogs/edit') }}" class="vrm-td-title-link">
+                                        <a href="{{ url('/vrm/blogs/edit') }}" class="vrm-td-title-link">
                                             We close the core cms chapter and...
                                         </a>
 
@@ -235,7 +235,7 @@
                                     <div class="row my-2">
                                         <div class="action">
                                                                     <span>
-                                                                        <a href="{{ url('/blogs/edit') }}">
+                                                                        <a href="{{ url('/vrm/blogs/edit') }}">
                                                                             <i class="bi bi-pencil"></i> Edit
                                                                         </a>
                                                                     </span>
@@ -277,7 +277,7 @@
                                 </td>
                                 <td class="vrm-column" vrm-colname="Comments">
                                                             <span>
-                                                                <a href="{{ url('/blogs/comment/list') }}">
+                                                                <a href="{{ url('/vrm/comment/list') }}">
                                                                     <i class="bi bi-chat-right-dots"> 2 </i>
                                                                 </a>
                                                             </span>
@@ -299,7 +299,7 @@
                                 <td class="vrm-column text-bold-500 vrm-th-primary" vrm-colname="ID">337777</td>
                                 <td class="vrm-column vrm-th-primary vrm-td-title" vrm-colname="Title">
                                     <div class="vrm-td-div">
-                                        <a href="{{ url('/blogs/edit') }}">
+                                        <a href="{{ url('/vrm/blogs/edit') }}">
                                             It bootcamp ready to go
                                         </a>
 
@@ -310,7 +310,7 @@
                                     <div class="row my-2">
                                         <div class="action">
                                                                     <span>
-                                                                        <a href="{{ url('/blogs/edit') }}">
+                                                                        <a href="{{ url('/vrm/blogs/edit') }}">
                                                                             <i class="bi bi-pencil"></i> Edit
                                                                         </a>
                                                                     </span>

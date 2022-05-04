@@ -8,7 +8,7 @@
                 <div class="col-md-6 col-sm-12">
                     <h3>
                         Edit Tag :
-                        <a href="{{ url('/tags') }}" class="btn btn-primary">
+                        <a href="{{ url('/vrm/tags') }}" class="btn btn-primary">
                             <!-- list check icon -->
                             Manage Tags <i class="bi bi-list-check"></i>
                         </a>
@@ -17,7 +17,7 @@
                 <div class="col-6 d-none d-md-block">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-end float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url('/vrm/dashboard') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Tag</li>
                         </ol>
                     </nav>

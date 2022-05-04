@@ -29,7 +29,7 @@
         <div class="col-lg-5 col-12">
             <div id="auth-left">
                 <div class="auth-logo vrm-logo-text">
-                    <a href="index.php">
+                    <a href="{{ url('/vrm/dashboard') }}">
                         <img src="/admin/vormia/vrm/img/logo/logo-blue.png" alt="Logo">
                         <span>Vormia</span>
                     </a>
