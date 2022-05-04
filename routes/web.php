@@ -61,3 +61,13 @@ Route::get('/categories', function () use ($admin_path) {
 Route::get('/categories/edit', function () use ($admin_path) {
     return view("$admin_path.blogs.category.edit");
 });
+
+//Page
+Route::get('/vrm/pages', function () use ($admin_path) {
+    return view("$admin_path.pages.list");
+});
+
+//Page Add / Edit
+Route::get('/vrm/pages/{path}', function ($state) use ($admin_path) {
+    return view("$admin_path.pages.$state");
+});

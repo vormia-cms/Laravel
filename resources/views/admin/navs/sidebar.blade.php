@@ -40,7 +40,7 @@
                     </li>
 
                     <li class="sidebar-item">
-                        <a href="/page/list.php" class='sidebar-link'>
+                        <a href="{{ url('/vrm/pages') }}" class='sidebar-link'>
                             <i class="bi bi-file-earmark-text-fill vrm-icon"></i>
                             <span>Pages</span>
                         </a>
