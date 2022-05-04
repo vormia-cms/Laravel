@@ -28,13 +28,13 @@
                                 <a href="{{ url('/blogs/add') }}">New</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/tag/manage.php">Tags</a>
+                                <a href="{{ url('/tags') }}">Tags</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/category/manage.php">Categories</a>
+                                <a href="{{ url('/categories') }}">Categories</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/comment/manage.php">Comments</a>
+                                <a href="{{ url('/comments') }}">Comments</a>
                             </li>
                         </ul>
                     </li>
