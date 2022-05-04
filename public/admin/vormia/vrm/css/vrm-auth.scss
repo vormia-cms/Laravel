@@ -1,0 +1,46 @@
+// Include Color
+@import "_incl/colors";
+// Include
+@import "_incl/incl";
+// Pre Functions
+@import "_incl/func";
+
+// Helpers
+
+/**
+* 1: Vormia Colors
+*/
+@include colorsCode();
+
+/**
+* 2: Vormia Logo
+*/
+@include vrm-logo();
+
+.vrm-logo-text,
+.vrm-logo-text-admin {
+  span {
+    font-size: 2.5em !important;
+  }
+}
+
+/**
+* 3: Vormia Auth
+*/
+#auth #auth-right {
+  height: 100%;
+  background: url(../img/login/kilimanjaro.jpeg),
+    linear-gradient(90deg, #2d499d, #3f5491);
+  background-size: cover;
+  align-self: center;
+  background-position-x: center;
+}
+
+h1.auth-title,
+.forgot-pass {
+  font-size: 2rem !important;
+}
+
+p.auth-subtitle {
+  font-size: 1rem !important;
+}

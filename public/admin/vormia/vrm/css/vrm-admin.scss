@@ -1,0 +1,861 @@
+// Include Color
+@import "_incl/colors";
+// Include
+@import "_incl/incl";
+// Pre Functions
+@import "_incl/func";
+
+// Helpers
+@include widthSize();
+@include fontSize();
+@include marginSet;
+@include paddingSet;
+@include sidebar-wrapper;
+
+/**
+** Todo:
+** 1: Vormia Colors
+*/
+@include colorsCode();
+
+/**
+** Todo:
+** 2: Layout & Position
+*/
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  font-size: 100% !important;
+  vertical-align: baseline !important;
+  background: transparent !important;
+
+  font-family: "Lato", sans-serif;
+  background-color: color(wp-grey-1) !important;
+
+  .bi-asterisk,
+  fa-asterisk {
+    color: color(red);
+    font-size: 10px;
+  }
+  .ps__rail-y,
+  .ps__rail-x {
+    display: none !important;
+  }
+}
+
+// TopBar - Position
+div#vrm-topbar {
+  background-color: color(spe-unique-dark-1) !important;
+  border-bottom: 2px solid color(red);
+  padding: 0 2% 0% 0.7rem !important;
+  height: 35px !important;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+
+  div.vrm-topbar-section {
+    display: contents;
+  }
+}
+
+// App - Position
+div.vrm-app {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  // position: relative;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  // Sidebar - Position
+  div#vrm-sidebar {
+    // margin-top: 32px;
+    // width: 13vw !important;
+    // height: 100vh;
+
+    // display: inline-block !important;
+    // position: fixed !important;
+  }
+
+  // Main - Position
+  div#vrm-main {
+    background-color: color(wp-grey-1);
+    margin: 0% !important;
+    padding: 3rem 1rem 1rem 1rem;
+    height: 100vh;
+
+    // width: 85vw !important;
+    width: 85% !important;
+    display: inline-block !important;
+    // position: absolute !important;
+    right: 0 !important;
+    float: right;
+
+    div#main {
+      display: block !important;
+    }
+  }
+}
+
+/**
+** Todo:
+** 3: TopBar
+*/
+
+div#topbar-section {
+  // TopBar Logo
+  .vrm-topbar-logo {
+    padding: 0rem 0rem 0rem !important;
+    a.vrm-logo-link {
+      span {
+        color: color(yellow);
+      }
+
+      &:hover {
+        span {
+          color: color(white);
+        }
+      }
+    }
+
+    a.vrm-mobile-menu {
+      margin-top: -5px;
+      padding-right: 10%;
+
+      i {
+        font-size: 1.7rem !important;
+        vertical-align: middle !important;
+        color: color(white);
+      }
+    }
+
+    //Logo
+    @include vrm-logo();
+
+    .vrm-logo-text-admin {
+      display: inline-flex;
+      img {
+        width: 5% !important;
+        background: color(white) !important;
+        border-radius: 2px !important;
+      }
+
+      span {
+        font-size: 1.2rem !important;
+        font-family: "Monoton", cursive !important;
+        vertical-align: middle !important;
+      }
+    }
+  }
+
+  // TopBar Controls
+  .vrm-topcar-control {
+    ul.vrm-topbar-icons {
+      padding-left: 0px;
+      list-style: none;
+      li {
+        display: inline;
+        padding: 0 1vw;
+        a {
+          color: color(white);
+          font-size: 1.2em;
+          i {
+          }
+
+          span {
+            font-size: 10px;
+            // color: color(yellow);
+            top: 27% !important;
+            padding: 2px;
+            border-radius: 0px !important;
+          }
+        }
+
+        &:last-child {
+          padding-right: 0px;
+          span {
+            font-size: 1.2em;
+            color: color(white);
+            top: 0px !important;
+            padding: 0px;
+            border-radius: 0px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+** Todo:
+** 4: Sidebar
+*/
+div#sidebar {
+  div.vrm-admin-sidebar {
+    //Sidebar Background Color
+    background-color: color(spe-unique-dark-1) !important;
+    transition: left 0.5s ease-out;
+
+    // position: initial;
+    overflow-y: auto;
+    z-index: 10;
+    bottom: 0;
+    top: 0;
+
+    div.sidebar-menu {
+      margin-top: 14%;
+
+      li {
+        span {
+          color: color(white) !important; //Sidebar Text Color
+        }
+      }
+
+      ul.menu {
+        margin-top: 0px !important;
+        padding: 0 0rem !important;
+        li.sidebar-item {
+          margin-top: 0px !important;
+          a {
+            padding: 5px 5% !important;
+            border-radius: 0px !important;
+            i,
+            i.vrm-icon {
+              color: color(white) !important;
+            }
+            span {
+              padding-top: 3% !important;
+              font-size: 14px !important;
+            }
+
+            &:hover {
+              background-color: color(transparent) !important;
+              span,
+              i {
+                color: color(yellow) !important;
+              }
+            }
+
+            &.active {
+              background-color: color(transparent) !important;
+              span,
+              i {
+                color: color(yellow) !important;
+              }
+            }
+          }
+
+          &.active {
+            .sidebar-link {
+              background-color: color(spe-blue-1) !important;
+            }
+          }
+          // .sidebar-wrapper .menu .sidebar-item.has-sub .
+          ul.submenu {
+            background-color: color(spe-grey-2) !important;
+            padding-left: 2px !important;
+            li {
+              a {
+                color: color(white) !important;
+
+                &:hover {
+                  background-color: color(spe-core-grey-2) !important;
+                  color: color(light-blue-2) !important;
+                }
+              }
+
+              &:hover {
+                border-left: 2px solid color(light-blue-2) !important;
+              }
+
+              &.active {
+                // border-left: 2px solid color(yellow) !important;
+                a {
+                  color: color(yellow) !important;
+                }
+              }
+            }
+          }
+
+          &.has-sub {
+            .sidebar-link {
+              &::after {
+                top: 7px !important;
+                content: "	\2303" !important;
+                -moz-transform: scale(-1, -1);
+                -o-transform: scale(-1, -1);
+                -webkit-transform: scale(-1, -1);
+                transform: scale(-1, -1);
+                color: color(white);
+              }
+            }
+
+            &.active {
+              .sidebar-link {
+                &::after {
+                  right: 0 !important;
+                  border: solid 8px transparent !important;
+                  content: " " !important;
+                  height: 0 !important;
+                  width: 0 !important;
+                  position: absolute !important;
+                  pointer-events: none !important;
+                  border-right-color: color(wp-grey-1) !important;
+
+                  top: 20px !important;
+                  margin-top: -8px !important;
+
+                  -moz-transform: none;
+                  -o-transform: none;
+                  -webkit-transform: none;
+                  transform: none;
+                }
+              }
+            }
+          }
+        }
+
+        // Hr
+        hr {
+          margin-top: 0px !important;
+          margin-bottom: 0px !important;
+          border: 0px !important;
+          border-top: 1px solid color(spe-core-grey-1) !important;
+        }
+      }
+    }
+  }
+}
+
+/**
+** Todo:
+** 5: Main Content
+*/
+#main {
+  margin-left: 0px !important; // Main Window 220px
+  padding: 0px !important;
+  padding-bottom: 10% !important;
+
+  // Main Content Section
+  div.vrm-mainsection {
+    /**
+    ** Vormia Table
+    */
+    table.vrm-table,
+    table.vrm-table-default {
+      // Hide this button
+      .vrm-tr-more-btn {
+        display: none;
+      }
+
+      text-align: left;
+      thead,
+      tfoot {
+        th {
+          font-size: 13px;
+          color: color(spe-grey-1);
+          font-weight: 400 !important;
+        }
+
+        th:first-child {
+          font-size: 16px;
+        }
+      }
+      tbody {
+        font-size: 16px;
+        text-align: left;
+        font-family: "Circular-Loom" !important;
+
+        tr {
+          background-color: color(spe-white);
+          // if row is even
+          &:nth-child(even) {
+            background-color: color(white);
+          }
+
+          td {
+            color: color(black);
+            vertical-align: top;
+            a {
+              color: color(spe-core-blue-3);
+              font-weight: 400;
+              &:hover {
+                color: color(spe-blue-1);
+              }
+            }
+            .action {
+              span {
+                margin-right: 2px;
+                a {
+                  i {
+                    margin: 0 2px;
+                  }
+                  font-size: 13px;
+                  margin-right: 3px;
+                  color: color(dark-blue-4);
+                  &:hover {
+                    color: color(blue);
+                  }
+                }
+                border-right: 1px solid color(grey);
+                &.status {
+                  a.activate {
+                    color: color(dark-green);
+                  }
+
+                  a.deactivate {
+                    color: color(purple);
+                  }
+                }
+
+                &.delete {
+                  border-right: none;
+                  a {
+                    color: color(red);
+                    &:hover {
+                      color: color(dark-red);
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          td:nth-child(3),
+          td.vrm-td-action {
+            .action {
+              visibility: hidden;
+              &.vrm-action-visible {
+                visibility: visible;
+              }
+            }
+
+            &:hover {
+              .action {
+                visibility: visible !important;
+              }
+            }
+          }
+
+          td.published {
+            p {
+              margin-bottom: 1px;
+              font-size: 14px;
+              color: color(spe-grey-2);
+            }
+          }
+        }
+      }
+    }
+
+    /**
+    ** Vormia Content
+    */
+    div.vrm-content-zone,
+    section.vrm-content-zone {
+      .vrm-control {
+        display: none;
+
+        ul {
+          list-style: none;
+          padding-left: 0px;
+          li {
+            display: inline-block;
+            button,
+            a {
+              border-radius: 0px;
+
+              i.bi-arrow-clockwise,
+              i.bi-arrow-counterclockwise {
+                font-weight: bold;
+                &:hover {
+                  color: color(white);
+                }
+              }
+            }
+            button.btn-plain,
+            a.btn-plain {
+              padding: 0px;
+              border: none;
+              i {
+                font-size: 1.5rem;
+                color: color(dark-red);
+              }
+              &:hover {
+                background-color: color(transparent);
+                padding: 0px;
+                border: none;
+                color: inherit;
+                font-size: 1.5rem;
+                font-weight: 400;
+              }
+
+              &.btn-plain-active {
+                background-color: color(red);
+                border-radius: 5px;
+                i {
+                  color: color(white);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Show Menu On Mobile
+      .vrm-control-show {
+        display: block !important;
+        width: 100% !important;
+      }
+    }
+
+    /**
+    ** Vormia Pagination
+    */
+    div.vrm-admin-pagination {
+      margin-top: 3px;
+      nav {
+        float: right;
+      }
+    }
+
+    /**
+    ** Boostrap Card
+    */
+    .card {
+      border-radius: 5px !important;
+      padding: 1rem 1rem !important;
+
+      label {
+        color: color(black);
+      }
+
+      // Input
+      input[type="text"] {
+        &:focus {
+          border-color: color(spe-core-blue-3) !important;
+          box-shadow: 0 0 0 1px color(spe-core-blue-3) !important;
+        }
+      }
+
+      .quill-editor,
+      #quill-editor {
+        div:first-child {
+          height: 40vh;
+        }
+        font-size: 14px;
+        color: color(black);
+      }
+
+      [class^="quill-editor-"],
+      [id^="quill-editor-"] {
+        @extend #quill-editor;
+      }
+
+      .quill-light,
+      #quill-light {
+        div:first-child {
+          height: 20vh;
+        }
+        font-size: 14px;
+        color: color(black);
+      }
+
+      [class^="quill-light-"],
+      [id^="quill-light-"] {
+        @extend #quill-light;
+      }
+    }
+
+    /** 
+    ** Page & Blog
+    */
+    div.vrm-blog-extra {
+      margin-top: 3px;
+      .card {
+        margin-bottom: 4px;
+      }
+    }
+
+    /**
+    ** Tools Section
+    */
+    div.vrm-blog-tool {
+      .card {
+        margin-bottom: 5px;
+        padding: 0px !important;
+        .card-header {
+          padding: 2%;
+          border-bottom: 0.5px solid color(wp-grey-1);
+          border-radius: 0px;
+          .card-title,
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
+            font-size: 1rem;
+          }
+        }
+        .card-body {
+          padding: 0.4rem 0.5rem !important;
+        }
+
+        .card-footer {
+          background-color: color(light-gray-5);
+          border-radius: 0px;
+          padding: 2%;
+          border: 1px solid color(white);
+        }
+      }
+
+      .vrm-blog-box {
+        .blog-text {
+          margin-left: 5px;
+          color: color(dark-grey-1);
+        }
+
+        a {
+          text-decoration: underline;
+        }
+
+        .blog-text-set {
+          color: color(spe-grey-1);
+        }
+      }
+      .vrm-plug-control {
+        display: none;
+        a {
+          color: color(dark-red);
+          text-decoration: underline;
+          text-transform: lowercase;
+
+          &:hover {
+            cursor: pointer;
+            color: color(blue);
+          }
+        }
+        &.active {
+          display: block;
+        }
+
+        .vrm-plug-control-action {
+          display: none;
+        }
+      }
+
+      .vrm-bloc {
+        ul.nav-tabs {
+          li.nav-item {
+            a {
+              text-decoration: none;
+              border-bottom: none;
+            }
+            a.active {
+              background-color: color(white) !important;
+              border: 1px solid color(light-gray);
+              border-bottom: none;
+              border-radius: 0px;
+
+              &:after {
+                background-color: color(transparent) !important;
+                box-shadow: none !important;
+                color: color(black);
+              }
+            }
+          }
+        }
+        div.tab-content {
+          border: 1px solid color(light-gray);
+          padding: 2%;
+          ul {
+            list-style: none !important;
+            padding-left: 1rem !important;
+          }
+          ul.vrm-ul-list-main {
+            padding-left: 0rem !important;
+          }
+        }
+      }
+    }
+
+    /**
+    ** Date Picker
+    */
+    @include date-picker;
+  }
+}
+
+/**
+** Todo:
+** 6: Footer
+*/
+footer {
+  display: none;
+  div {
+    div.footer {
+      margin-right: 3rem;
+    }
+  }
+}
+
+/**
+** Todo:
+** 7: Page Content
+*/
+div.page-content {
+  .vrm-shortcode {
+    .list-group {
+      a {
+      }
+    }
+
+    .tab-content {
+      div.tab-pane {
+        h4,
+        h5,
+        h6 {
+          color: color(dark-orange);
+          font-size: 0.8rem;
+        }
+
+        code {
+          font-size: 0.8rem;
+        }
+
+        p {
+          color: color(dark-blue);
+          font-size: 0.7rem;
+        }
+
+        span {
+          color: color(dark-green);
+          font-weight: bold;
+          font-size: 1rem;
+          &:after {
+            content: " | ";
+          }
+        }
+
+        ul.vrm-shortcode-ul {
+          li.vrm-shortcode-li {
+            &.has-ul {
+              ul.vrm-shortcode-ul {
+                list-style: " -> ";
+                li.vrm-shortcode-li {
+                  color: color(black);
+                  font-size: 0.8rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  div.vrm-helper-action,
+  div.vrm-field-action {
+    a.badge {
+      font-size: 0.8rem;
+      font-weight: 300;
+      border-radius: 0px;
+
+      &:hover {
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      @include shadow3;
+    }
+  }
+
+  div.vrm-checkbox-switch {
+    input[type="checkbox"] {
+      &:checked {
+        background-color: color(dark-green-4);
+        border-color: color(light-green-4);
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  // Per User
+  .vrm-per-user {
+    display: none;
+    // Input Text
+    input[type="text"] {
+      width: 100%;
+    }
+  }
+}
+
+/**
+** Todo:
+** 8: Custom CSS
+*/
+.vrm-link {
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+    color: color(light-blue);
+  }
+}
+
+.vrm-link-blunt {
+  color: color(dark-gray-4) !important;
+}
+
+.vrm-link-sm {
+  font-size: 0.7rem;
+}
+
+.vrm-link-md {
+  font-size: 1rem;
+}
+
+.vrm-noresize {
+  resize: none !important;
+}
+
+// Input & Textarea
+input[type="text"],
+input[type="number"],
+textarea {
+  color: color(black);
+  &:focus {
+    color: color(black);
+  }
+}
+
+// Comment Box
+div.vrm-reply-box {
+  padding: 2px;
+  border: 1px solid color(wp-grey-1);
+}
+
+// Ul Style
+ul {
+  &.vrm-ul-dash {
+    list-style: " - ";
+    padding-left: 0rem !important;
+  }
+  &.vrm-ul-asterisk {
+    list-style: " * ";
+    padding-left: 0rem !important;
+  }
+  &.vrm-ul-empty {
+    list-style: "";
+    padding-left: 0rem !important;
+  }
+}
+
+// Boostrap Badge BG
+@include boostrapBG();
