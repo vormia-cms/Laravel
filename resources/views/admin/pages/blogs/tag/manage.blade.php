@@ -1,4 +1,4 @@
-{{--Layout--}}
+{{-- Layout --}}
 @extends('admin.layouts.main')
 
 @section('app-header')
@@ -86,7 +86,8 @@
                                 <div class="row justify-content-between">
                                     <div class="col-lg-2 col-sm-12 mb-1">
                                         <div class="input-group mb-3">
-                                            <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Bulk Action</button>
+                                            <button class="btn btn-info dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">Bulk Action</button>
                                             <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item" href="#">Activate</a></li>
                                                 <li><a class="dropdown-item" href="#">Deactivate</a></li>
@@ -118,199 +119,203 @@
                                 <table class="table vrm-table mb-0">
                                     <!-- Head -->
                                     <thead>
-                                    <tr>
-                                        <td class="vrm-column vrm-check-column">
-                                            <div class="form-check">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="form-check-input vrm-td-check">
+                                        <tr>
+                                            <td class="vrm-column vrm-check-column">
+                                                <div class="form-check">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" class="form-check-input vrm-td-check">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <th class="vrm-column vrm-th-primary">ID</th>
-                                        <th class="vrm-column vrm-th-primary">Title</th>
-                                        <th class="vrm-column">Slug</th>
-                                        <th class="vrm-column">Published</th>
-                                    </tr>
+                                            </td>
+                                            <th class="vrm-column vrm-th-primary">ID</th>
+                                            <th class="vrm-column vrm-th-primary">Title</th>
+                                            <th class="vrm-column">Slug</th>
+                                            <th class="vrm-column">Published</th>
+                                        </tr>
                                     </thead>
                                     <!-- Body -->
                                     <tbody>
-                                    <tr>
-                                        <th class="vrm-column vrm-check-column">
-                                            <div class="form-check">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="form-check-input vrm-td-check" name="">
+                                        <tr>
+                                            <th class="vrm-column vrm-check-column">
+                                                <div class="form-check">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" class="form-check-input vrm-td-check"
+                                                            name="">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </th>
-                                        <td class="vrm-column text-bold-500 vrm-th-primary" vrm-colname="ID">23</td>
-                                        <td class="vrm-column vrm-th-primary vrm-td-title" vrm-colname="Title">
-                                            <div class="vrm-td-div">
-                                                <a href="">
-                                                    Vormia Learn
-                                                </a>
+                                            </th>
+                                            <td class="vrm-column text-bold-500 vrm-th-primary" vrm-colname="ID">23</td>
+                                            <td class="vrm-column vrm-th-primary vrm-td-title" vrm-colname="Title">
+                                                <div class="vrm-td-div">
+                                                    <a href="">
+                                                        Vormia Learn
+                                                    </a>
 
-                                                <button class="vrm-tr-more-btn">
-                                                    <i class="bi bi-arrow-down-circle-fill"></i>
-                                                </button>
-                                            </div>
-                                            <div class="row my-2">
-                                                <div class="action">
-                                                                            <span>
-                                                                                <a href="{{ url('/vrm/tags/edit') }}">
-                                                                                    <i class="bi bi-pencil"></i> Edit
-                                                                                </a>
-                                                                            </span>
-                                                    <span>
-                                                                                <a href="">
-                                                                                    <i class="bi bi-eye-fill"></i> View
-                                                                                </a>
-                                                                            </span>
-                                                    <span class="status">
-                                                                                <a href="" class="deactivate">
-                                                                                    <i class="bi bi-x-circle-fill"></i> Deactivate
-                                                                                </a>
-                                                                            </span>
-                                                    <span class="delete">
-                                                                                <a href="">
-                                                                                    <i class="bi bi-trash2-fill"></i> Delete
-                                                                                </a>
-                                                                            </span>
+                                                    <button class="vrm-tr-more-btn">
+                                                        <i class="bi bi-arrow-down-circle-fill"></i>
+                                                    </button>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="vrm-column" vrm-colname="Slug">
-                                            <span>vormia-learn</span>
-                                        </td>
-                                        <td class="vrm-column published" vrm-colname="Published">
-                                            <p>Visibility: Public</p>
-                                            <p>Count: 12</p>
-                                            <p>Status: Active</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="vrm-column vrm-check-column">
-                                            <div class="form-check">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="form-check-input vrm-td-check" name="">
+                                                <div class="row my-2">
+                                                    <div class="action">
+                                                        <span>
+                                                            <a href="{{ url('/vrm/tags/edit') }}">
+                                                                <i class="bi bi-pencil"></i> Edit
+                                                            </a>
+                                                        </span>
+                                                        <span>
+                                                            <a href="">
+                                                                <i class="bi bi-eye-fill"></i> View
+                                                            </a>
+                                                        </span>
+                                                        <span class="status">
+                                                            <a href="" class="deactivate">
+                                                                <i class="bi bi-x-circle-fill"></i> Deactivate
+                                                            </a>
+                                                        </span>
+                                                        <span class="delete">
+                                                            <a href="">
+                                                                <i class="bi bi-trash2-fill"></i> Delete
+                                                            </a>
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </th>
-                                        <td class="vrm-column text-bold-500 vrm-th-primary" vrm-colname="ID">24</td>
-                                        <td class="vrm-column vrm-th-primary vrm-td-title" vrm-colname="Title">
-                                            <div class="vrm-td-div">
-                                                <a href="">
-                                                    Leaving Core Cms
-                                                </a>
+                                            </td>
+                                            <td class="vrm-column" vrm-colname="Slug">
+                                                <span>vormia-learn</span>
+                                            </td>
+                                            <td class="vrm-column published" vrm-colname="Published">
+                                                <p>Visibility: Public</p>
+                                                <p>Count: 12</p>
+                                                <p>Status: Active</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="vrm-column vrm-check-column">
+                                                <div class="form-check">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" class="form-check-input vrm-td-check"
+                                                            name="">
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <td class="vrm-column text-bold-500 vrm-th-primary" vrm-colname="ID">24</td>
+                                            <td class="vrm-column vrm-th-primary vrm-td-title" vrm-colname="Title">
+                                                <div class="vrm-td-div">
+                                                    <a href="">
+                                                        Leaving Core Cms
+                                                    </a>
 
-                                                <button class="vrm-tr-more-btn">
-                                                    <i class="bi bi-arrow-down-circle-fill"></i>
-                                                </button>
-                                            </div>
-                                            <div class="row my-2">
-                                                <div class="action">
-                                                                            <span>
-                                                                                <a href="{{ url('/vrm/tags/edit') }}">
-                                                                                    <i class="bi bi-pencil"></i> Edit
-                                                                                </a>
-                                                                            </span>
-                                                    <span>
-                                                                                <a href="">
-                                                                                    <i class="bi bi-eye-fill"></i> View
-                                                                                </a>
-                                                                            </span>
-                                                    <span class="status">
-                                                                                <a href="" class="activate">
-                                                                                    <i class="bi bi-check-circle-fill"></i> Activate
-                                                                                </a>
-                                                                            </span>
-                                                    <span class="delete">
-                                                                                <a href="">
-                                                                                    <i class="bi bi-trash2-fill"></i> Delete
-                                                                                </a>
-                                                                            </span>
-
+                                                    <button class="vrm-tr-more-btn">
+                                                        <i class="bi bi-arrow-down-circle-fill"></i>
+                                                    </button>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="vrm-column" vrm-colname="Slug">
-                                            <span>leaving-core-cms</span>
-                                        </td>
-                                        <td class="vrm-column published" vrm-colname="Published">
-                                            <p>Visibility: Hidden</p>
-                                            <p>Count: 0</p>
-                                            <p>Status: Deactivated</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th class="vrm-column vrm-check-column">
-                                            <div class="form-check">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="form-check-input vrm-td-check" name="">
-                                                </div>
-                                            </div>
-                                        </th>
-                                        <td class="vrm-column text-bold-500 vrm-th-primary" vrm-colname="ID">25</td>
-                                        <td class="vrm-column vrm-th-primary vrm-td-title" vrm-colname="Title">
-                                            <div class="vrm-td-div">
-                                                <a href="">
-                                                    Coding
-                                                </a>
+                                                <div class="row my-2">
+                                                    <div class="action">
+                                                        <span>
+                                                            <a href="{{ url('/vrm/tags/edit') }}">
+                                                                <i class="bi bi-pencil"></i> Edit
+                                                            </a>
+                                                        </span>
+                                                        <span>
+                                                            <a href="">
+                                                                <i class="bi bi-eye-fill"></i> View
+                                                            </a>
+                                                        </span>
+                                                        <span class="status">
+                                                            <a href="" class="activate">
+                                                                <i class="bi bi-check-circle-fill"></i> Activate
+                                                            </a>
+                                                        </span>
+                                                        <span class="delete">
+                                                            <a href="">
+                                                                <i class="bi bi-trash2-fill"></i> Delete
+                                                            </a>
+                                                        </span>
 
-                                                <button class="vrm-tr-more-btn">
-                                                    <i class="bi bi-arrow-down-circle-fill"></i>
-                                                </button>
-                                            </div>
-                                            <div class="row my-2">
-                                                <div class="action">
-                                                                            <span>
-                                                                                <a href="{{ url('/vrm/tags/edit') }}">
-                                                                                    <i class="bi bi-pencil"></i> Edit
-                                                                                </a>
-                                                                            </span>
-                                                    <span>
-                                                                                <a href="">
-                                                                                    <i class="bi bi-eye-fill"></i> View
-                                                                                </a>
-                                                                            </span>
-                                                    <span class="status">
-                                                                                <a href="" class="deactivate">
-                                                                                    <i class="bi bi-x-circle-fill"></i> Deactivate
-                                                                                </a>
-                                                                            </span>
-                                                    <span class="delete">
-                                                                                <a href="">
-                                                                                    <i class="bi bi-trash2-fill"></i> Delete
-                                                                                </a>
-                                                                            </span>
-
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="vrm-column" vrm-colname="Slug">
-                                            <span>coding</span>
-                                        </td>
-                                        <td class="vrm-column published" vrm-colname="Published">
-                                            <p>Visibility: Private</p>
-                                            <p>Count: 1</p>
-                                            <p>Status: Active</p>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td class="vrm-column" vrm-colname="Slug">
+                                                <span>leaving-core-cms</span>
+                                            </td>
+                                            <td class="vrm-column published" vrm-colname="Published">
+                                                <p>Visibility: Hidden</p>
+                                                <p>Count: 0</p>
+                                                <p>Status: Deactivated</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="vrm-column vrm-check-column">
+                                                <div class="form-check">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" class="form-check-input vrm-td-check"
+                                                            name="">
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <td class="vrm-column text-bold-500 vrm-th-primary" vrm-colname="ID">25</td>
+                                            <td class="vrm-column vrm-th-primary vrm-td-title" vrm-colname="Title">
+                                                <div class="vrm-td-div">
+                                                    <a href="">
+                                                        Coding
+                                                    </a>
+
+                                                    <button class="vrm-tr-more-btn">
+                                                        <i class="bi bi-arrow-down-circle-fill"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="row my-2">
+                                                    <div class="action">
+                                                        <span>
+                                                            <a href="{{ url('/vrm/tags/edit') }}">
+                                                                <i class="bi bi-pencil"></i> Edit
+                                                            </a>
+                                                        </span>
+                                                        <span>
+                                                            <a href="">
+                                                                <i class="bi bi-eye-fill"></i> View
+                                                            </a>
+                                                        </span>
+                                                        <span class="status">
+                                                            <a href="" class="deactivate">
+                                                                <i class="bi bi-x-circle-fill"></i> Deactivate
+                                                            </a>
+                                                        </span>
+                                                        <span class="delete">
+                                                            <a href="">
+                                                                <i class="bi bi-trash2-fill"></i> Delete
+                                                            </a>
+                                                        </span>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="vrm-column" vrm-colname="Slug">
+                                                <span>coding</span>
+                                            </td>
+                                            <td class="vrm-column published" vrm-colname="Published">
+                                                <p>Visibility: Private</p>
+                                                <p>Count: 1</p>
+                                                <p>Status: Active</p>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                     <!-- Footer -->
                                     <tfoot>
-                                    <tr>
-                                        <td class="vrm-column vrm-check-column">
-                                            <div class="form-check">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="form-check-input vrm-td-check" name="">
+                                        <tr>
+                                            <td class="vrm-column vrm-check-column">
+                                                <div class="form-check">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" class="form-check-input vrm-td-check"
+                                                            name="">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <th class="vrm-column vrm-th-primary">ID</th>
-                                        <th class="vrm-column vrm-th-primary">Title</th>
-                                        <th class="vrm-column">Slug</th>
-                                        <th class="vrm-column">Published</th>
-                                    </tr>
+                                            </td>
+                                            <th class="vrm-column vrm-th-primary">ID</th>
+                                            <th class="vrm-column vrm-th-primary">Title</th>
+                                            <th class="vrm-column">Slug</th>
+                                            <th class="vrm-column">Published</th>
+                                        </tr>
                                     </tfoot>
                                 </table>
 
@@ -319,7 +324,8 @@
 
                                     <nav aria-label="navigation">
                                         <ul class="pagination pagination-primary">
-                                            <li class="page-item disabled d-none d-md-block"><a class="page-link" href="#">First</a></li>
+                                            <li class="page-item disabled d-none d-md-block"><a class="page-link"
+                                                    href="#">First</a></li>
                                             <li class="page-item disabled">
                                                 <a class="page-link" href="#">
                                                     <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
@@ -331,7 +337,8 @@
                                                     <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
                                                 </a>
                                             </li>
-                                            <li class="page-item active d-none d-md-block"><a class="page-link" href="#">Last</a></li>
+                                            <li class="page-item active d-none d-md-block"><a class="page-link"
+                                                    href="#">Last</a></li>
                                         </ul>
                                     </nav>
                                 </div>

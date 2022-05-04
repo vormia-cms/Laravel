@@ -1,4 +1,4 @@
-{{--Layout--}}
+{{-- Layout --}}
 @extends('admin.layouts.main')
 
 @section('app-header')
@@ -78,16 +78,22 @@
                                             <!-- Permalink [Post link] -->
                                             <div class="form-group" id="postLinkBloc">
                                                 <label class="d-inline" for="permalink">Link:</label>
-                                                <a href="#" id="postLinkShow" class="vrm-link vrm-link-md">{{ url('') }}/sample-blog-post</a>
+                                                <a href="#" id="postLinkShow"
+                                                    class="vrm-link vrm-link-md">{{ url('') }}/sample-blog-post</a>
 
                                                 <!-- Edit Area -->
-                                                <label id="postLinkMain" class="vrm-link-blunt vrm-link-sm d-none">{{ url('') }}/</label>
-                                                <input type="text" id="postLink" class="form-control vrm-width-55 d-none" value="sample-blog-post" placeholder="Change Post Link">
-                                                <button type="button" id="editLinkSave" class="btn btn-sm btn-primary d-none">Save</button>
-                                                <a id="editLinkCancel" class="vrm-link vrm-color-red vrm-link-sm d-none">Cancel</a>
+                                                <label id="postLinkMain"
+                                                    class="vrm-link-blunt vrm-link-sm d-none">{{ url('') }}/</label>
+                                                <input type="text" id="postLink" class="form-control vrm-width-55 d-none"
+                                                    value="sample-blog-post" placeholder="Change Post Link">
+                                                <button type="button" id="editLinkSave"
+                                                    class="btn btn-sm btn-primary d-none">Save</button>
+                                                <a id="editLinkCancel"
+                                                    class="vrm-link vrm-color-red vrm-link-sm d-none">Cancel</a>
                                                 <!-- End Edit Area -->
 
-                                                <button type="button" id="editLink" class="btn btn-sm btn-outline-info">Edit</button>
+                                                <button type="button" id="editLink"
+                                                    class="btn btn-sm btn-outline-info">Edit</button>
                                             </div>
                                         </div>
                                     </div>
@@ -108,7 +114,8 @@
                     <div class="vrm-control-zone col-lg-3 d-none d-sm-none d-md-block">
                         <div class="vrm-blog-tool" section-type="blog-tool">
                             <div class="card" order="1">
-                                <div id="publishTool" data-bs-toggle="collapse" data-bs-target="#collapsePublish" aria-expanded="true" aria-controls="collapsePublish" role="button">
+                                <div id="publishTool" data-bs-toggle="collapse" data-bs-target="#collapsePublish"
+                                    aria-expanded="true" aria-controls="collapsePublish" role="button">
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-10">
@@ -124,7 +131,8 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <div id="collapsePublish" class="collapse show pt-1" aria-labelledby="publishTool" data-parent="#cardAccordion">
+                                    <div id="collapsePublish" class="collapse show pt-1" aria-labelledby="publishTool"
+                                        data-parent="#cardAccordion">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="vrm-blog-box">
@@ -146,18 +154,22 @@
                                                             <span class="blog-text">Date:</span>
 
                                                             <span class="blog-text blog-text-set">Today</span>
-                                                            <a href="#publish-date" class="vrm-plug-btn vrm-plug-edit">change</a>
+                                                            <a href="#publish-date"
+                                                                class="vrm-plug-btn vrm-plug-edit">change</a>
 
                                                             <div class="vrm-plug-control publish-date-zone">
                                                                 <div class="row">
                                                                     <div class="col-7">
-                                                                        <input type="text" class="form-control form-control-sm date datepicker-input">
+                                                                        <input type="text"
+                                                                            class="form-control form-control-sm date datepicker-input">
                                                                     </div>
                                                                     <div class="col-2">
-                                                                        <button class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Ok</button>
+                                                                        <button
+                                                                            class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Ok</button>
                                                                     </div>
                                                                     <div class="col-3">
-                                                                        <a href="#publish-date" class="vrm-plug-btn vrm-plug-cancel">Cancel</a>
+                                                                        <a href="#publish-date"
+                                                                            class="vrm-plug-btn vrm-plug-cancel">Cancel</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -171,13 +183,16 @@
                                                             <span class="blog-text">Visibility:</span>
 
                                                             <span class="blog-text blog-text-set">Public</span>
-                                                            <a href="#publish-visibility" class="vrm-plug-btn vrm-plug-edit">change</a>
+                                                            <a href="#publish-visibility"
+                                                                class="vrm-plug-btn vrm-plug-edit">change</a>
 
                                                             <div class="vrm-plug-control publish-visibility-zone">
                                                                 <div class="row">
                                                                     <div class="col-12">
                                                                         <div class="form-check">
-                                                                            <input class="form-check-input visibility-check" type="radio" name="visibility" value="public" checked>
+                                                                            <input class="form-check-input visibility-check"
+                                                                                type="radio" name="visibility"
+                                                                                value="public" checked>
                                                                             <label class="form-check-label" for="">
                                                                                 Public
                                                                             </label>
@@ -185,22 +200,30 @@
                                                                     </div>
                                                                     <div class="col-12">
                                                                         <div class="form-check">
-                                                                            <input class="form-check-input visibility-check" type="radio" name="visibility" value="protected">
+                                                                            <input class="form-check-input visibility-check"
+                                                                                type="radio" name="visibility"
+                                                                                value="protected">
                                                                             <label class="form-check-label" for="">
                                                                                 Protected
                                                                             </label>
                                                                         </div>
-                                                                        <div class="vrm-plug-control-action visibility-protected-zone">
+                                                                        <div
+                                                                            class="vrm-plug-control-action visibility-protected-zone">
                                                                             <div class="row">
                                                                                 <div class="col-12">
-                                                                                    <input type="text" class="form-control form-control-sm" placeholder="Enter Unlocking Password:">
+                                                                                    <input type="text"
+                                                                                        class="form-control form-control-sm"
+                                                                                        placeholder="Enter Unlocking Password:">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-12">
                                                                         <div class="form-check">
-                                                                            <input class="form-check-input visibility-check" type="radio" name="visibility" value="private">
+                                                                            <input
+                                                                                class="form-check-input visibility-check"
+                                                                                type="radio" name="visibility"
+                                                                                value="private">
                                                                             <label class="form-check-label" for="">
                                                                                 Private
                                                                             </label>
@@ -208,20 +231,28 @@
                                                                     </div>
                                                                     <div class="col-12">
                                                                         <div class="form-check">
-                                                                            <input class="form-check-input visibility-check" type="radio" name="visibility" value="access">
+                                                                            <input
+                                                                                class="form-check-input visibility-check"
+                                                                                type="radio" name="visibility"
+                                                                                value="access">
                                                                             <label class="form-check-label" for="">
                                                                                 Access
                                                                             </label>
                                                                         </div>
-                                                                        <div class="vrm-plug-control-action visibility-access-zone">
+                                                                        <div
+                                                                            class="vrm-plug-control-action visibility-access-zone">
                                                                             <div class="row">
                                                                                 <div class="col-12">
-                                                                                    <select class="choices form-select" multiple="multiple">
-                                                                                        <option value="author">Author</option>
-                                                                                        <option value="editor">Editor</option>
+                                                                                    <select class="choices form-select"
+                                                                                        multiple="multiple">
+                                                                                        <option value="author">Author
+                                                                                        </option>
+                                                                                        <option value="editor">Editor
+                                                                                        </option>
                                                                                         <option value="user">User</option>
                                                                                         <option value="admin">Admin</option>
-                                                                                        <option value="super">Super Admin</option>
+                                                                                        <option value="super">Super Admin
+                                                                                        </option>
                                                                                     </select>
                                                                                 </div>
                                                                             </div>
@@ -230,10 +261,12 @@
                                                                 </div>
                                                                 <div class="row mt-2">
                                                                     <div class="col-2">
-                                                                        <button class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Ok</button>
+                                                                        <button
+                                                                            class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Ok</button>
                                                                     </div>
                                                                     <div class="col-3">
-                                                                        <a href="#publish-visibility" class="vrm-plug-btn vrm-plug-cancel">Cancel</a>
+                                                                        <a href="#publish-visibility"
+                                                                            class="vrm-plug-btn vrm-plug-cancel">Cancel</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -261,7 +294,8 @@
                             </div>
 
                             <div class="card" order="2">
-                                <div id="categoryTool" data-bs-toggle="collapse" data-bs-target="#collapseCategory" aria-expanded="true" aria-controls="collapseCategory" role="button">
+                                <div id="categoryTool" data-bs-toggle="collapse" data-bs-target="#collapseCategory"
+                                    aria-expanded="true" aria-controls="collapseCategory" role="button">
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-10">
@@ -277,7 +311,8 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <div id="collapseCategory" class="collapse show pt-1" aria-labelledby="categoryTool" data-parent="#cardAccordion">
+                                    <div id="collapseCategory" class="collapse show pt-1" aria-labelledby="categoryTool"
+                                        data-parent="#cardAccordion">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="vrm-blog-box">
@@ -285,60 +320,93 @@
                                                         <!-- Category List -->
                                                         <div class="row mb-3" id="publish-category">
                                                             <div class="col-12">
-                                                                <ul class="nav nav-tabs" id="categoriesList" role="tablist">
+                                                                <ul class="nav nav-tabs" id="categoriesList"
+                                                                    role="tablist">
                                                                     <li class="nav-item" role="presentation">
-                                                                        <a class="nav-link active" id="all-tab" data-bs-toggle="tab" href="#allCategories" role="tab" aria-controls="all" aria-selected="true">All</a>
+                                                                        <a class="nav-link active" id="all-tab"
+                                                                            data-bs-toggle="tab" href="#allCategories"
+                                                                            role="tab" aria-controls="all"
+                                                                            aria-selected="true">All</a>
                                                                     </li>
                                                                     <li class="nav-item" role="presentation">
-                                                                        <a class="nav-link" id="popular-tab" data-bs-toggle="tab" href="#popularCategories" role="tab" aria-controls="popular" aria-selected="false">Popular</a>
+                                                                        <a class="nav-link" id="popular-tab"
+                                                                            data-bs-toggle="tab" href="#popularCategories"
+                                                                            role="tab" aria-controls="popular"
+                                                                            aria-selected="false">Popular</a>
                                                                     </li>
                                                                 </ul>
                                                                 <div class="tab-content mb-2" id="myTabContent">
-                                                                    <div class="tab-pane fade show active" id="allCategories" role="tabpanel" aria-labelledby="all-tab">
+                                                                    <div class="tab-pane fade show active"
+                                                                        id="allCategories" role="tabpanel"
+                                                                        aria-labelledby="all-tab">
                                                                         <div class='my-2'>
                                                                             <ul class="vrm-ul-list-main">
                                                                                 <li>
                                                                                     <div class="form-check form-check-sm">
-                                                                                        <input type="checkbox" class="form-check-input form-check-primary form-check-glow" name="category[]">
-                                                                                        <label class="form-check-label" for="">Uncategorized</label>
+                                                                                        <input type="checkbox"
+                                                                                            class="form-check-input form-check-primary form-check-glow"
+                                                                                            name="category[]">
+                                                                                        <label class="form-check-label"
+                                                                                            for="">Uncategorized</label>
                                                                                     </div>
                                                                                 </li>
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="tab-pane fade" id="popularCategories" role="tabpanel" aria-labelledby="popular-tab">
+                                                                    <div class="tab-pane fade" id="popularCategories"
+                                                                        role="tabpanel" aria-labelledby="popular-tab">
                                                                         <div class='my-2'>
                                                                             <ul class="vrm-ul-list-main">
                                                                                 <li>
                                                                                     <div class="form-check form-check-sm">
-                                                                                        <input type="checkbox" class="form-check-input form-check-primary form-check-glow" name="category[]">
-                                                                                        <label class="form-check-label" for="">Uncategorized</label>
+                                                                                        <input type="checkbox"
+                                                                                            class="form-check-input form-check-primary form-check-glow"
+                                                                                            name="category[]">
+                                                                                        <label class="form-check-label"
+                                                                                            for="">Uncategorized</label>
                                                                                     </div>
                                                                                 </li>
                                                                                 <li>
                                                                                     <div class="form-check form-check-sm">
-                                                                                        <input type="checkbox" class="form-check-input form-check-primary form-check-glow" name="category[]">
-                                                                                        <label class="form-check-label" for="">Vormia</label>
+                                                                                        <input type="checkbox"
+                                                                                            class="form-check-input form-check-primary form-check-glow"
+                                                                                            name="category[]">
+                                                                                        <label class="form-check-label"
+                                                                                            for="">Vormia</label>
                                                                                     </div>
                                                                                     <ul>
                                                                                         <li>
-                                                                                            <div class="form-check form-check-sm">
-                                                                                                <input type="checkbox" class="form-check-input form-check-primary form-check-glow" name="category[]">
-                                                                                                <label class="form-check-label" for="">How to use</label>
+                                                                                            <div
+                                                                                                class="form-check form-check-sm">
+                                                                                                <input type="checkbox"
+                                                                                                    class="form-check-input form-check-primary form-check-glow"
+                                                                                                    name="category[]">
+                                                                                                <label
+                                                                                                    class="form-check-label"
+                                                                                                    for="">How to
+                                                                                                    use</label>
                                                                                             </div>
                                                                                         </li>
                                                                                         <li>
-                                                                                            <div class="form-check form-check-sm">
-                                                                                                <input type="checkbox" class="form-check-input form-check-primary form-check-glow" name="category[]">
-                                                                                                <label class="form-check-label" for="">Core CMS</label>
+                                                                                            <div
+                                                                                                class="form-check form-check-sm">
+                                                                                                <input type="checkbox"
+                                                                                                    class="form-check-input form-check-primary form-check-glow"
+                                                                                                    name="category[]">
+                                                                                                <label
+                                                                                                    class="form-check-label"
+                                                                                                    for="">Core CMS</label>
                                                                                             </div>
                                                                                         </li>
                                                                                     </ul>
                                                                                 </li>
                                                                                 <li>
                                                                                     <div class="form-check form-check-sm">
-                                                                                        <input type="checkbox" class="form-check-input form-check-primary form-check-glow" name="category[]">
-                                                                                        <label class="form-check-label" for="">Guide</label>
+                                                                                        <input type="checkbox"
+                                                                                            class="form-check-input form-check-primary form-check-glow"
+                                                                                            name="category[]">
+                                                                                        <label class="form-check-label"
+                                                                                            for="">Guide</label>
                                                                                     </div>
                                                                                 </li>
                                                                             </ul>
@@ -348,15 +416,19 @@
 
                                                                 <hr>
 
-                                                                <a href="#publish-category" class="vrm-plug-btn vrm-plug-edit">
+                                                                <a href="#publish-category"
+                                                                    class="vrm-plug-btn vrm-plug-edit">
                                                                     <!-- plus icon -->
-                                                                    <i class="bi bi-plus vrm-color-blue"></i> Add New Category
+                                                                    <i class="bi bi-plus vrm-color-blue"></i> Add New
+                                                                    Category
                                                                 </a>
 
                                                                 <div class="vrm-plug-control publish-category-zone">
                                                                     <div class="row">
                                                                         <div class="col-12 mb-2">
-                                                                            <input type="text" class="form-control form-control-sm" placeholder="Enter Category Name">
+                                                                            <input type="text"
+                                                                                class="form-control form-control-sm"
+                                                                                placeholder="Enter Category Name">
                                                                         </div>
 
                                                                         <div class="col-12">
@@ -371,10 +443,13 @@
 
                                                                     <div class="row">
                                                                         <div class="col-9">
-                                                                            <button class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Add New Category</button>
+                                                                            <button
+                                                                                class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Add
+                                                                                New Category</button>
                                                                         </div>
                                                                         <div class="col-3">
-                                                                            <a href="#publish-category" class="vrm-plug-btn vrm-plug-cancel">Cancel</a>
+                                                                            <a href="#publish-category"
+                                                                                class="vrm-plug-btn vrm-plug-cancel">Cancel</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -389,7 +464,8 @@
                             </div>
 
                             <div class="card" order="3">
-                                <div id="tagTool" data-bs-toggle="collapse" data-bs-target="#collapseTag" aria-expanded="true" aria-controls="collapseTag" role="button">
+                                <div id="tagTool" data-bs-toggle="collapse" data-bs-target="#collapseTag"
+                                    aria-expanded="true" aria-controls="collapseTag" role="button">
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-10">
@@ -405,7 +481,8 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <div id="collapseTag" class="collapse show pt-1" aria-labelledby="tagTool" data-parent="#cardAccordion">
+                                    <div id="collapseTag" class="collapse show pt-1" aria-labelledby="tagTool"
+                                        data-parent="#cardAccordion">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="vrm-blog-box">
@@ -413,10 +490,13 @@
                                                     <div class="mb-3" id="publish-tag">
                                                         <div class="row">
                                                             <div class="col-8">
-                                                                <input type="text" class="form-control form-control-sm" placeholder="Enter Tag Name">
+                                                                <input type="text" class="form-control form-control-sm"
+                                                                    placeholder="Enter Tag Name">
                                                             </div>
                                                             <div class="col-4">
-                                                                <button class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Add Tag</button>
+                                                                <button
+                                                                    class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Add
+                                                                    Tag</button>
                                                             </div>
                                                         </div>
                                                         <div class="row mt-2">
@@ -429,7 +509,8 @@
                                                             <div class="col-12">
                                                                 <!-- icon -->
                                                                 <div class="vrm-plug">
-                                                                    <select class="choices form-select" multiple="multiple">
+                                                                    <select class="choices form-select"
+                                                                        multiple="multiple">
                                                                         <option value="author">Author</option>
                                                                         <option value="editor">Editor</option>
                                                                         <option value="user">User</option>
@@ -448,7 +529,8 @@
                             </div>
 
                             <div class="card" order="4">
-                                <div id="controlTool" data-bs-toggle="collapse" data-bs-target="#collapseControl" aria-expanded="true" aria-controls="collapseControl" role="button">
+                                <div id="controlTool" data-bs-toggle="collapse" data-bs-target="#collapseControl"
+                                    aria-expanded="true" aria-controls="collapseControl" role="button">
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-10">
@@ -464,7 +546,8 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <div id="collapseControl" class="collapse show pt-1" aria-labelledby="controlTool" data-parent="#cardAccordion">
+                                    <div id="collapseControl" class="collapse show pt-1" aria-labelledby="controlTool"
+                                        data-parent="#cardAccordion">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="vrm-blog-box">
@@ -511,7 +594,8 @@
                             </div>
 
                             <div class="card" order="5">
-                                <div id="featuredTool" data-bs-toggle="collapse" data-bs-target="#collapseFeatured" aria-expanded="true" aria-controls="collapseFeatured" role="button">
+                                <div id="featuredTool" data-bs-toggle="collapse" data-bs-target="#collapseFeatured"
+                                    aria-expanded="true" aria-controls="collapseFeatured" role="button">
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-10">
@@ -527,7 +611,8 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <div id="collapseFeatured" class="collapse show pt-1" aria-labelledby="featuredTool" data-parent="#cardAccordion">
+                                    <div id="collapseFeatured" class="collapse show pt-1" aria-labelledby="featuredTool"
+                                        data-parent="#cardAccordion">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="vrm-blog-box">
@@ -542,8 +627,10 @@
 
                                                             <div class="col-12">
                                                                 <div class="input-group mb-3">
-                                                                    <label class="input-group-text" for=""><i class="bi bi-upload"></i></label>
-                                                                    <input type="file" class="form-control" accept="image/png, image/jpg, image/jpeg" id="">
+                                                                    <label class="input-group-text" for=""><i
+                                                                            class="bi bi-upload"></i></label>
+                                                                    <input type="file" class="form-control"
+                                                                        accept="image/png, image/jpg, image/jpeg" id="">
                                                                 </div>
                                                             </div>
                                                         </div>

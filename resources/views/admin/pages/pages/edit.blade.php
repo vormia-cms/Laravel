@@ -1,4 +1,4 @@
-{{--Layout--}}
+{{-- Layout --}}
 @extends('admin.layouts.main')
 
 @section('app-header')
@@ -78,16 +78,22 @@
                                             <!-- Permalink [Post link] -->
                                             <div class="form-group" id="postLinkBloc">
                                                 <label class="d-inline" for="permalink">Link:</label>
-                                                <a href="#" id="postLinkShow" class="vrm-link vrm-link-md">{{ url('') }}/sample-page-post</a>
+                                                <a href="#" id="postLinkShow"
+                                                    class="vrm-link vrm-link-md">{{ url('') }}/sample-page-post</a>
 
                                                 <!-- Edit Area -->
-                                                <label id="postLinkMain" class="vrm-link-blunt vrm-link-sm d-none">{{ url('') }}/</label>
-                                                <input type="text" id="postLink" class="form-control vrm-width-55 d-none" value="sample-blog-post" placeholder="Change Post Link">
-                                                <button type="button" id="editLinkSave" class="btn btn-sm btn-primary d-none">Save</button>
-                                                <a id="editLinkCancel" class="vrm-link vrm-color-red vrm-link-sm d-none">Cancel</a>
+                                                <label id="postLinkMain"
+                                                    class="vrm-link-blunt vrm-link-sm d-none">{{ url('') }}/</label>
+                                                <input type="text" id="postLink" class="form-control vrm-width-55 d-none"
+                                                    value="sample-blog-post" placeholder="Change Post Link">
+                                                <button type="button" id="editLinkSave"
+                                                    class="btn btn-sm btn-primary d-none">Save</button>
+                                                <a id="editLinkCancel"
+                                                    class="vrm-link vrm-color-red vrm-link-sm d-none">Cancel</a>
                                                 <!-- End Edit Area -->
 
-                                                <button type="button" id="editLink" class="btn btn-sm btn-outline-info">Edit</button>
+                                                <button type="button" id="editLink"
+                                                    class="btn btn-sm btn-outline-info">Edit</button>
                                             </div>
                                         </div>
                                     </div>
@@ -108,7 +114,8 @@
                     <div class="vrm-control-zone col-lg-3 d-none d-sm-none d-md-block">
                         <div class="vrm-blog-tool" section-type="blog-tool">
                             <div class="card" order="1">
-                                <div id="publishTool" data-bs-toggle="collapse" data-bs-target="#collapsePublish" aria-expanded="true" aria-controls="collapsePublish" role="button">
+                                <div id="publishTool" data-bs-toggle="collapse" data-bs-target="#collapsePublish"
+                                    aria-expanded="true" aria-controls="collapsePublish" role="button">
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-10">
@@ -124,7 +131,8 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <div id="collapsePublish" class="collapse show pt-1" aria-labelledby="publishTool" data-parent="#cardAccordion">
+                                    <div id="collapsePublish" class="collapse show pt-1" aria-labelledby="publishTool"
+                                        data-parent="#cardAccordion">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="vrm-blog-box">
@@ -146,18 +154,22 @@
                                                             <span class="blog-text">Date:</span>
 
                                                             <span class="blog-text blog-text-set">Today</span>
-                                                            <a href="#publish-date" class="vrm-plug-btn vrm-plug-edit">change</a>
+                                                            <a href="#publish-date"
+                                                                class="vrm-plug-btn vrm-plug-edit">change</a>
 
                                                             <div class="vrm-plug-control publish-date-zone">
                                                                 <div class="row">
                                                                     <div class="col-7">
-                                                                        <input type="text" class="form-control form-control-sm date datepicker-input">
+                                                                        <input type="text"
+                                                                            class="form-control form-control-sm date datepicker-input">
                                                                     </div>
                                                                     <div class="col-2">
-                                                                        <button class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Ok</button>
+                                                                        <button
+                                                                            class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Ok</button>
                                                                     </div>
                                                                     <div class="col-3">
-                                                                        <a href="#publish-date" class="vrm-plug-btn vrm-plug-cancel">Cancel</a>
+                                                                        <a href="#publish-date"
+                                                                            class="vrm-plug-btn vrm-plug-cancel">Cancel</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -171,13 +183,16 @@
                                                             <span class="blog-text">Visibility:</span>
 
                                                             <span class="blog-text blog-text-set">Public</span>
-                                                            <a href="#publish-visibility" class="vrm-plug-btn vrm-plug-edit">change</a>
+                                                            <a href="#publish-visibility"
+                                                                class="vrm-plug-btn vrm-plug-edit">change</a>
 
                                                             <div class="vrm-plug-control publish-visibility-zone">
                                                                 <div class="row">
                                                                     <div class="col-12">
                                                                         <div class="form-check">
-                                                                            <input class="form-check-input visibility-check" type="radio" name="visibility" value="public" checked>
+                                                                            <input class="form-check-input visibility-check"
+                                                                                type="radio" name="visibility"
+                                                                                value="public" checked>
                                                                             <label class="form-check-label" for="">
                                                                                 Public
                                                                             </label>
@@ -185,22 +200,30 @@
                                                                     </div>
                                                                     <div class="col-12">
                                                                         <div class="form-check">
-                                                                            <input class="form-check-input visibility-check" type="radio" name="visibility" value="protected">
+                                                                            <input class="form-check-input visibility-check"
+                                                                                type="radio" name="visibility"
+                                                                                value="protected">
                                                                             <label class="form-check-label" for="">
                                                                                 Protected
                                                                             </label>
                                                                         </div>
-                                                                        <div class="vrm-plug-control-action visibility-protected-zone">
+                                                                        <div
+                                                                            class="vrm-plug-control-action visibility-protected-zone">
                                                                             <div class="row">
                                                                                 <div class="col-12">
-                                                                                    <input type="text" class="form-control form-control-sm" placeholder="Enter Unlocking Password:">
+                                                                                    <input type="text"
+                                                                                        class="form-control form-control-sm"
+                                                                                        placeholder="Enter Unlocking Password:">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-12">
                                                                         <div class="form-check">
-                                                                            <input class="form-check-input visibility-check" type="radio" name="visibility" value="private">
+                                                                            <input
+                                                                                class="form-check-input visibility-check"
+                                                                                type="radio" name="visibility"
+                                                                                value="private">
                                                                             <label class="form-check-label" for="">
                                                                                 Private
                                                                             </label>
@@ -208,20 +231,28 @@
                                                                     </div>
                                                                     <div class="col-12">
                                                                         <div class="form-check">
-                                                                            <input class="form-check-input visibility-check" type="radio" name="visibility" value="access">
+                                                                            <input
+                                                                                class="form-check-input visibility-check"
+                                                                                type="radio" name="visibility"
+                                                                                value="access">
                                                                             <label class="form-check-label" for="">
                                                                                 Access
                                                                             </label>
                                                                         </div>
-                                                                        <div class="vrm-plug-control-action visibility-access-zone">
+                                                                        <div
+                                                                            class="vrm-plug-control-action visibility-access-zone">
                                                                             <div class="row">
                                                                                 <div class="col-12">
-                                                                                    <select class="choices form-select" multiple="multiple">
-                                                                                        <option value="author">Author</option>
-                                                                                        <option value="editor">Editor</option>
+                                                                                    <select class="choices form-select"
+                                                                                        multiple="multiple">
+                                                                                        <option value="author">Author
+                                                                                        </option>
+                                                                                        <option value="editor">Editor
+                                                                                        </option>
                                                                                         <option value="user">User</option>
                                                                                         <option value="admin">Admin</option>
-                                                                                        <option value="super">Super Admin</option>
+                                                                                        <option value="super">Super Admin
+                                                                                        </option>
                                                                                     </select>
                                                                                 </div>
                                                                             </div>
@@ -230,10 +261,12 @@
                                                                 </div>
                                                                 <div class="row mt-2">
                                                                     <div class="col-2">
-                                                                        <button class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Ok</button>
+                                                                        <button
+                                                                            class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Ok</button>
                                                                     </div>
                                                                     <div class="col-3">
-                                                                        <a href="#publish-visibility" class="vrm-plug-btn vrm-plug-cancel">Cancel</a>
+                                                                        <a href="#publish-visibility"
+                                                                            class="vrm-plug-btn vrm-plug-cancel">Cancel</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -262,7 +295,8 @@
 
                             <!-- Page Control -->
                             <div class="card" order="2">
-                                <div id="controlTool" data-bs-toggle="collapse" data-bs-target="#collapseControl" aria-expanded="true" aria-controls="collapseControl" role="button">
+                                <div id="controlTool" data-bs-toggle="collapse" data-bs-target="#collapseControl"
+                                    aria-expanded="true" aria-controls="collapseControl" role="button">
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-10">
@@ -278,7 +312,8 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <div id="collapseControl" class="collapse show pt-1" aria-labelledby="controlTool" data-parent="#cardAccordion">
+                                    <div id="collapseControl" class="collapse show pt-1" aria-labelledby="controlTool"
+                                        data-parent="#cardAccordion">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="vrm-blog-box">
@@ -312,8 +347,10 @@
                                                                         <select class="form-select">
                                                                             <option>--- Self ---</option>
                                                                             <option>An introduction to vormia</option>
-                                                                            <option>At vero eos et accusamus et iusto odio</option>
-                                                                            <option>Journey of development starts here</option>
+                                                                            <option>At vero eos et accusamus et iusto odio
+                                                                            </option>
+                                                                            <option>Journey of development starts here
+                                                                            </option>
                                                                         </select>
                                                                     </fieldset>
                                                                 </div>
@@ -342,7 +379,9 @@
                                                                 </div>
 
                                                                 <div class="col-12">
-                                                                    <input type="number" class="form-control form-control-sm" placeholder="0">
+                                                                    <input type="number"
+                                                                        class="form-control form-control-sm"
+                                                                        placeholder="0">
                                                                 </div>
                                                             </div>
 
@@ -356,7 +395,8 @@
                             </div>
 
                             <div class="card" order="3">
-                                <div id="featuredTool" data-bs-toggle="collapse" data-bs-target="#collapseFeatured" aria-expanded="true" aria-controls="collapseFeatured" role="button">
+                                <div id="featuredTool" data-bs-toggle="collapse" data-bs-target="#collapseFeatured"
+                                    aria-expanded="true" aria-controls="collapseFeatured" role="button">
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-10">
@@ -372,7 +412,8 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <div id="collapseFeatured" class="collapse show pt-1" aria-labelledby="featuredTool" data-parent="#cardAccordion">
+                                    <div id="collapseFeatured" class="collapse show pt-1" aria-labelledby="featuredTool"
+                                        data-parent="#cardAccordion">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="vrm-blog-box">
@@ -387,8 +428,10 @@
 
                                                             <div class="col-12">
                                                                 <div class="input-group mb-3">
-                                                                    <label class="input-group-text" for=""><i class="bi bi-upload"></i></label>
-                                                                    <input type="file" class="form-control" accept="image/png, image/jpg, image/jpeg" id="">
+                                                                    <label class="input-group-text" for=""><i
+                                                                            class="bi bi-upload"></i></label>
+                                                                    <input type="file" class="form-control"
+                                                                        accept="image/png, image/jpg, image/jpeg" id="">
                                                                 </div>
                                                             </div>
                                                         </div>

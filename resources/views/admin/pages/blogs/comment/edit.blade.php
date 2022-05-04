@@ -1,4 +1,4 @@
-{{--Layout--}}
+{{-- Layout --}}
 @extends('admin.layouts.main')
 
 @section('app-header')
@@ -69,7 +69,8 @@
                                             <!-- Permalink [Post link] -->
                                             <div class="form-group" id="postLinkBloc">
                                                 <label class="d-inline" for="permalink">Link:</label>
-                                                <a href="#" id="postLinkShow" class="vrm-link vrm-link-md">{{ url('') }}/personal-comment-on-post</a>
+                                                <a href="#" id="postLinkShow"
+                                                    class="vrm-link vrm-link-md">{{ url('') }}/personal-comment-on-post</a>
                                             </div>
                                         </div>
                                     </div>
@@ -118,7 +119,8 @@
                     <div class="vrm-control-zone col-lg-3 d-none d-sm-none d-md-block">
                         <div class="vrm-blog-tool" section-type="blog-tool">
                             <div class="card" order="1">
-                                <div id="publishTool" data-bs-toggle="collapse" data-bs-target="#collapsePublish" aria-expanded="true" aria-controls="collapsePublish" role="button">
+                                <div id="publishTool" data-bs-toggle="collapse" data-bs-target="#collapsePublish"
+                                    aria-expanded="true" aria-controls="collapsePublish" role="button">
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-10">
@@ -134,7 +136,8 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <div id="collapsePublish" class="collapse show pt-1" aria-labelledby="publishTool" data-parent="#cardAccordion">
+                                    <div id="collapsePublish" class="collapse show pt-1" aria-labelledby="publishTool"
+                                        data-parent="#cardAccordion">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="vrm-blog-box">
@@ -156,18 +159,22 @@
                                                             <span class="blog-text">Date:</span>
 
                                                             <span class="blog-text blog-text-set">Today</span>
-                                                            <a href="#publish-date" class="vrm-plug-btn vrm-plug-edit">change</a>
+                                                            <a href="#publish-date"
+                                                                class="vrm-plug-btn vrm-plug-edit">change</a>
 
                                                             <div class="vrm-plug-control publish-date-zone">
                                                                 <div class="row">
                                                                     <div class="col-7">
-                                                                        <input type="text" class="form-control form-control-sm date datepicker-input">
+                                                                        <input type="text"
+                                                                            class="form-control form-control-sm date datepicker-input">
                                                                     </div>
                                                                     <div class="col-2">
-                                                                        <button class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Ok</button>
+                                                                        <button
+                                                                            class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Ok</button>
                                                                     </div>
                                                                     <div class="col-3">
-                                                                        <a href="#publish-date" class="vrm-plug-btn vrm-plug-cancel">Cancel</a>
+                                                                        <a href="#publish-date"
+                                                                            class="vrm-plug-btn vrm-plug-cancel">Cancel</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -181,13 +188,16 @@
                                                             <span class="blog-text">Visibility:</span>
 
                                                             <span class="blog-text blog-text-set">Public</span>
-                                                            <a href="#publish-visibility" class="vrm-plug-btn vrm-plug-edit">change</a>
+                                                            <a href="#publish-visibility"
+                                                                class="vrm-plug-btn vrm-plug-edit">change</a>
 
                                                             <div class="vrm-plug-control publish-visibility-zone">
                                                                 <div class="row">
                                                                     <div class="col-12">
                                                                         <div class="form-check">
-                                                                            <input class="form-check-input visibility-check" type="radio" name="visibility" value="public" checked>
+                                                                            <input class="form-check-input visibility-check"
+                                                                                type="radio" name="visibility"
+                                                                                value="public" checked>
                                                                             <label class="form-check-label" for="">
                                                                                 Public
                                                                             </label>
@@ -195,22 +205,31 @@
                                                                     </div>
                                                                     <div class="col-12">
                                                                         <div class="form-check">
-                                                                            <input class="form-check-input visibility-check" type="radio" name="visibility" value="protected">
+                                                                            <input
+                                                                                class="form-check-input visibility-check"
+                                                                                type="radio" name="visibility"
+                                                                                value="protected">
                                                                             <label class="form-check-label" for="">
                                                                                 Protected
                                                                             </label>
                                                                         </div>
-                                                                        <div class="vrm-plug-control-action visibility-protected-zone">
+                                                                        <div
+                                                                            class="vrm-plug-control-action visibility-protected-zone">
                                                                             <div class="row">
                                                                                 <div class="col-12">
-                                                                                    <input type="text" class="form-control form-control-sm" placeholder="Enter Unlocking Password:">
+                                                                                    <input type="text"
+                                                                                        class="form-control form-control-sm"
+                                                                                        placeholder="Enter Unlocking Password:">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-12">
                                                                         <div class="form-check">
-                                                                            <input class="form-check-input visibility-check" type="radio" name="visibility" value="private">
+                                                                            <input
+                                                                                class="form-check-input visibility-check"
+                                                                                type="radio" name="visibility"
+                                                                                value="private">
                                                                             <label class="form-check-label" for="">
                                                                                 Private
                                                                             </label>
@@ -218,20 +237,28 @@
                                                                     </div>
                                                                     <div class="col-12">
                                                                         <div class="form-check">
-                                                                            <input class="form-check-input visibility-check" type="radio" name="visibility" value="access">
+                                                                            <input
+                                                                                class="form-check-input visibility-check"
+                                                                                type="radio" name="visibility"
+                                                                                value="access">
                                                                             <label class="form-check-label" for="">
                                                                                 Access
                                                                             </label>
                                                                         </div>
-                                                                        <div class="vrm-plug-control-action visibility-access-zone">
+                                                                        <div
+                                                                            class="vrm-plug-control-action visibility-access-zone">
                                                                             <div class="row">
                                                                                 <div class="col-12">
-                                                                                    <select class="choices form-select" multiple="multiple">
-                                                                                        <option value="author">Author</option>
-                                                                                        <option value="editor">Editor</option>
+                                                                                    <select class="choices form-select"
+                                                                                        multiple="multiple">
+                                                                                        <option value="author">Author
+                                                                                        </option>
+                                                                                        <option value="editor">Editor
+                                                                                        </option>
                                                                                         <option value="user">User</option>
                                                                                         <option value="admin">Admin</option>
-                                                                                        <option value="super">Super Admin</option>
+                                                                                        <option value="super">Super Admin
+                                                                                        </option>
                                                                                     </select>
                                                                                 </div>
                                                                             </div>
@@ -240,10 +267,12 @@
                                                                 </div>
                                                                 <div class="row mt-2">
                                                                     <div class="col-2">
-                                                                        <button class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Ok</button>
+                                                                        <button
+                                                                            class="btn btn-sm btn-info vrm-plug-btn vrm-plug-save">Ok</button>
                                                                     </div>
                                                                     <div class="col-3">
-                                                                        <a href="#publish-visibility" class="vrm-plug-btn vrm-plug-cancel">Cancel</a>
+                                                                        <a href="#publish-visibility"
+                                                                            class="vrm-plug-btn vrm-plug-cancel">Cancel</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -265,10 +294,14 @@
                                                     <div class="row mb-3" id="publish-reply-to">
                                                         <div class="col-12 vrm-font-13">
                                                             <span class="blog-text">Replying to:</span>
-                                                            <a href="{{ url('/vrm/comments/edit') }}" class="vrm-plug-btn vrm-link">Jone Doe (superadmin) comment.</a>
+                                                            <a href="{{ url('/vrm/comments/edit') }}"
+                                                                class="vrm-plug-btn vrm-link">Jone Doe (superadmin)
+                                                                comment.</a>
 
                                                             <span class="blog-text">on post:</span>
-                                                            <a href="{{ url('/vrm/blogs/edit') }}" class="vrm-plug-btn vrm-link">We close the core cms chapter and...</a>
+                                                            <a href="{{ url('/vrm/blogs/edit') }}"
+                                                                class="vrm-plug-btn vrm-link">We close the core cms chapter
+                                                                and...</a>
                                                         </div>
                                                     </div>
                                                 </div>

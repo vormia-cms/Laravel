@@ -1,4 +1,4 @@
-{{--Layout--}}
+{{-- Layout --}}
 @extends('admin.layouts.main')
 
 @section('app-header')
@@ -45,7 +45,8 @@
                                             </a>
                                         </p>
                                         <blockquote>
-                                            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur met consectetur adipisicing elit. Aspernatur</p>
+                                            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                elit. Aspernatur met consectetur adipisicing elit. Aspernatur</p>
                                         </blockquote>
                                     </div>
                                 </div>
@@ -55,7 +56,8 @@
                                 <div class="row mb-3">
                                     <div class="col-12">
                                         <div class="vrm-reply-box">
-                                            <div id="userInfo" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseUser" role="button">
+                                            <div id="userInfo" data-bs-toggle="collapse" data-bs-target="#collapseUser"
+                                                aria-expanded="false" aria-controls="collapseUser" role="button">
                                                 <div class="px-1 py-0 vrm-bg-color-dark">
                                                     <div class="row">
                                                         <div class="col-10">
@@ -70,7 +72,8 @@
                                                 </div>
                                             </div>
 
-                                            <div id="collapseUser" class="collapse pt-1" aria-labelledby="userInfo" data-parent="#cardAccordion">
+                                            <div id="collapseUser" class="collapse pt-1" aria-labelledby="userInfo"
+                                                data-parent="#cardAccordion">
                                                 <div class="row px-2 mt-2">
                                                     <div class="col-md-6">
                                                         <div class="form-group row align-items-center">
@@ -78,7 +81,8 @@
                                                                 <label class="col-form-label">Username</label>
                                                             </div>
                                                             <div class="col-lg-8 col-9">
-                                                                <input type="text" class="form-control" name="" placeholder="Name">
+                                                                <input type="text" class="form-control" name=""
+                                                                    placeholder="Name">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -89,7 +93,8 @@
                                                                 <label class="col-form-label">Email</label>
                                                             </div>
                                                             <div class="col-lg-8 col-9">
-                                                                <input type="email" class="form-control" placeholder="Email Address">
+                                                                <input type="email" class="form-control"
+                                                                    placeholder="Email Address">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -117,7 +122,8 @@
                             <div class="card-footer">
                                 <div class="row justify-content-between">
                                     <div class="col-lg-4 col-6">
-                                        <a href="{{ url('/vrm/comments/manage') }}" class="vrm-link vrm-color-red">Cancel</a>
+                                        <a href="{{ url('/vrm/comments/manage') }}"
+                                            class="vrm-link vrm-color-red">Cancel</a>
                                     </div>
                                     <div class="col-lg-4 col-6">
                                         <button type="button" class="btn btn-sm btn-success w-100">

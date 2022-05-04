@@ -1,4 +1,4 @@
-{{--Extend the Layout--}}
+{{-- Extend the Layout --}}
 @extends('admin.layouts.log')
 
 {{-- Content --}}

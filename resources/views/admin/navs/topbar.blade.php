@@ -23,7 +23,8 @@
                     <li class="vrm-topbar-icon">
                         <a href="{{ url('/vrm/dashboard') }}">
                             <i class="bi bi-chat-text"></i>
-                            <span class="position-absolute top-0 translate-middle badge rounded-pill bg-danger">20</span>
+                            <span
+                                class="position-absolute top-0 translate-middle badge rounded-pill bg-danger">20</span>
                         </a>
                     </li>
                     <li class="vrm-topbar-icon">
