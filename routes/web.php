@@ -134,8 +134,12 @@ Route::get('/vrm/fieldtypes/{path}', function ($state) use ($admin_path) {
 Route::get('/vrm/modules', function () use ($admin_path) {
     return view("$admin_path.modules.module");
 });
-
 //Inheritance List
 Route::get('/vrm/modules/inheritance', function () use ($admin_path) {
     return view("$admin_path.modules.inheritance");
+});
+
+//Settings
+Route::get('/vrm/settings/{path}', function ($state) use ($admin_path) {
+    return view("$admin_path.settings.$state");
 });

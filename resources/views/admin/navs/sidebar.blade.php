@@ -161,31 +161,31 @@
                         </a>
                         <ul class="submenu ">
                             <li class="submenu-item ">
-                                <a href="/setting/visibility.php">Visibility</a>
+                                <a href="{{ url('/vrm/settings/visibility') }}">Visibility</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/setting/system.php">System</a>
+                                <a href="{{ url('/vrm/settings/system') }}">System</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/setting/mail.php">Mailing</a>
+                                <a href="{{ url('/vrm/settings/mail') }}">Mailing</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/setting/tweak.php">Tweaks</a>
+                                <a href="{{ url('/vrm/settings/tweak') }}">Tweaks</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/setting/media.php">Media</a>
+                                <a href="{{ url('/vrm/settings/media') }}">Media</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/setting/robot.php">Robots</a>
+                                <a href="{{ url('/vrm/settings/robot') }}">Robots</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/setting/writting.php">Writting</a>
+                                <a href="{{ url('/vrm/settings/writing') }}">Writing</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/setting/reading.php">Reading</a>
+                                <a href="{{ url('/vrm/settings/reading') }}">Reading</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/setting/blog.php">Blog</a>
+                                <a href="{{ url('/vrm/settings/blog') }}">Blog</a>
                             </li>
                         </ul>
                     </li>

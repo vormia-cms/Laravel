@@ -21,14 +21,14 @@
                 <!-- Add Ul list with icons -->
                 <ul class="vrm-topbar-icons float-end">
                     <li class="vrm-topbar-icon">
-                        <a href="{{ url('/vrm/dashboard') }}">
+                        <a href="#">
                             <i class="bi bi-chat-text"></i>
                             <span
                                 class="position-absolute top-0 translate-middle badge rounded-pill bg-danger">20</span>
                         </a>
                     </li>
                     <li class="vrm-topbar-icon">
-                        <a href="{{ url('/vrm/dashboard') }}">
+                        <a href="#">
                             <i class="bi bi-bell"></i>
                             <span class="position-absolute top-0 translate-middle badge rounded-pill bg-danger">
                                 100 <sup>+</sup>
@@ -36,12 +36,12 @@
                         </a>
                     </li>
                     <li class="vrm-topbar-icon">
-                        <a href="{{ url('/vrm/dashboard') }}" target="_blank">
+                        <a href="#" target="_blank">
                             <i class="bi bi-box-arrow-up-right"></i>
                         </a>
                     </li>
                     <li class="vrm-topbar-icon">
-                        <a href="{{ url('/vrm/dashboard') }}">
+                        <a href="{{ url('/vrm/users/profile') }}">
                             <i class="bi bi-person-badge"></i>
                             <span>Artistan</span>
                         </a>
