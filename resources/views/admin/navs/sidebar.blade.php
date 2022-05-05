@@ -66,19 +66,19 @@
                         </a>
                         <ul class="submenu submenu-ul">
                             <li class="submenu-item ">
-                                <a href="/tools/inheritance/manage.php">Inheritances</a>
+                                <a href="{{ url('/vrm/inheritances') }}">Inheritances</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/tools/shortcode/manage.php">Shortcodes</a>
+                                <a href="{{ url('/vrm/shortcodes') }}">Shortcodes</a>
                             </li>
                             <li class="submenu-item d-none">
                                 <a href="">Widgets</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/tools/helper/list.php">Helpers</a>
+                                <a href="{{ url('/vrm/helpers') }}">Helpers</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/tools/field/list.php">Fields</a>
+                                <a href="{{ url('/vrm/fields') }}">Fields</a>
                             </li>
                         </ul>
                     </li>
@@ -112,13 +112,13 @@
                         </a>
                         <ul class="submenu ">
                             <li class="submenu-item ">
-                                <a href="/user/list.php">All</a>
+                                <a href="{{ url('/vrm/users') }}">All</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/user/add.php">Add New</a>
+                                <a href="{{ url('/vrm/users/add') }}">Add New</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/user/profile.php">My Profile</a>
+                                <a href="{{ url('/vrm/users/profile') }}">My Profile</a>
                             </li>
                         </ul>
                     </li>
@@ -130,19 +130,19 @@
                         </a>
                         <ul class="submenu ">
                             <li class="submenu-item">
-                                <a href="/access/manage.php">Access</a>
+                                <a href="{{ url('/vrm/access') }}">Access</a>
                             </li>
                             <li class="submenu-item d-none">
                                 <a href="">Themes</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/fieldtype/list.php">Fields Type</a>
+                                <a href="{{ url('/vrm/fieldtypes') }}">Fields Type</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/modulelist/manage.php">Modules List</a>
+                                <a href="{{ url('/vrm/modules') }}">Modules List</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="/inheritancelist/manage.php">Inheritance List</a>
+                                <a href="{{ url('/vrm/modules/inheritance') }}">Inheritance List</a>
                             </li>
                         </ul>
                     </li>

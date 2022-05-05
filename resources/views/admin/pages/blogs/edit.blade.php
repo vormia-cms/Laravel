@@ -7,10 +7,10 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <h3>
-                        Edit Post :
-                        <a href="{{ url('/vrm/blogs/add') }}" class="btn btn-primary">
-                            <!-- plus icon -->
-                            Add New <i class="bi bi-plus"></i>
+                        Edit Blog :
+                        <a href="{{ url('/vrm/blogs') }}" class="btn btn-primary">
+                            <!-- list check icon -->
+                            Manage Blogs <i class="bi bi-list-check"></i>
                         </a>
                     </h3>
                 </div>

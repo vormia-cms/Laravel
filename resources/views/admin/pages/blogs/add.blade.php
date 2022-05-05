@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <h3>
-                        Add New Post :
+                        Add Blog :
                     </h3>
                 </div>
                 <div class="col-6 d-none d-md-block">

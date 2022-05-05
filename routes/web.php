@@ -66,8 +66,76 @@ Route::get('/vrm/categories/edit', function () use ($admin_path) {
 Route::get('/vrm/pages', function () use ($admin_path) {
     return view("$admin_path.pages.list");
 });
-
 //Page Add / Edit
 Route::get('/vrm/pages/{path}', function ($state) use ($admin_path) {
     return view("$admin_path.pages.$state");
+});
+
+//Inheritances
+Route::get('/vrm/inheritances', function () use ($admin_path) {
+    return view("$admin_path.inheritances.manage");
+});
+//Inheritances Edit
+Route::get('/vrm/inheritances/edit', function () use ($admin_path) {
+    return view("$admin_path.inheritances.edit");
+});
+
+//Shortcodes
+Route::get('/vrm/shortcodes', function () use ($admin_path) {
+    return view("$admin_path.shortcodes.manage");
+});
+
+//Helpers
+Route::get('/vrm/helpers', function () use ($admin_path) {
+    return view("$admin_path.helpers.list");
+});
+//Helpers Add / Edit
+Route::get('/vrm/helpers/{path}', function ($state) use ($admin_path) {
+    return view("$admin_path.helpers.$state");
+});
+
+//Fields
+Route::get('/vrm/fields', function () use ($admin_path) {
+    return view("$admin_path.fields.list");
+});
+//Helpers Add / Edit
+Route::get('/vrm/fields/{path}', function ($state) use ($admin_path) {
+    return view("$admin_path.fields.$state");
+});
+
+//Users
+Route::get('/vrm/users', function () use ($admin_path) {
+    return view("$admin_path.users.list");
+});
+//Users Add / Edit / View & Profile
+Route::get('/vrm/users/{path}', function ($state) use ($admin_path) {
+    return view("$admin_path.users.$state");
+});
+
+//Access
+Route::get('/vrm/access', function () use ($admin_path) {
+    return view("$admin_path.access.manage");
+});
+//Access Edit
+Route::get('/vrm/access/edit', function () use ($admin_path) {
+    return view("$admin_path.access.edit");
+});
+
+//Fields Type
+Route::get('/vrm/fieldtypes', function () use ($admin_path) {
+    return view("$admin_path.fieldtypes.list");
+});
+//Fields Type Add / Edit
+Route::get('/vrm/fieldtypes/{path}', function ($state) use ($admin_path) {
+    return view("$admin_path.fieldtypes.$state");
+});
+
+//Module List
+Route::get('/vrm/modules', function () use ($admin_path) {
+    return view("$admin_path.modules.module");
+});
+
+//Inheritance List
+Route::get('/vrm/modules/inheritance', function () use ($admin_path) {
+    return view("$admin_path.modules.inheritance");
 });

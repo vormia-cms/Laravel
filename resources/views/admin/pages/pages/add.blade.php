@@ -7,13 +7,17 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <h3>
-                        Add New Page :
+                        Add Page :
+                        <a href="{{ url('/vrm/pages') }}" class="btn btn-primary">
+                            <!-- list check icon -->
+                            Manage Pages <i class="bi bi-list-check"></i>
+                        </a>
                     </h3>
                 </div>
                 <div class="col-6 d-none d-md-block">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-end float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url('/vrm/dashboard') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Page</li>
                         </ol>
                     </nav>
