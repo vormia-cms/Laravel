@@ -139,10 +139,10 @@
                                 <a href="{{ url('/vrm/fieldtypes') }}">Fields Type</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="{{ url('/vrm/modules') }}">Modules List</a>
+                                <a href="{{ url('/vrm/controls/module') }}">Modules List</a>
                             </li>
                             <li class="submenu-item ">
-                                <a href="{{ url('/vrm/modules/inheritance') }}">Inheritance List</a>
+                                <a href="{{ url('/vrm/controls/inheritance') }}">Inheritance List</a>
                             </li>
                         </ul>
                     </li>
