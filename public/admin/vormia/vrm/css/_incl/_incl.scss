@@ -1,147 +1,171 @@
 /* Box Shadow */
 @mixin shadow1 {
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
 }
 @mixin shadow2 {
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
 }
 @mixin shadow3 {
-  -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.27);
-  -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.27);
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.27);
+    -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.27);
+    -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.27);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.27);
 }
 
 /** Logo TEXT **/
 @mixin vrm-logo {
-  .vrm-logo-text,
-  .vrm-logo-text-admin {
-    margin-bottom: 20px !important;
+    .vrm-logo-text,
+    .vrm-logo-text-admin {
+        margin-bottom: 20px !important;
 
-    /* 
-##Device = Low Resolution Tablets, Mobiles (Landscape)
-##Screen = B/w 481px to 767px
-*/
-    @media (min-width: 5px) and (max-width: 650px) {
-      span {
-        font-family: "Monoton", cursive;
-        font-size: 1em;
-        vertical-align: middle !important;
-        //font-weight: bold;
-      }
+        /*
+        ##Device = Low Resolution Tablets, Mobiles (Landscape)
+        ##Screen = B/w 481px to 767px
+        */
+        @media (min-width: 5px) and (max-width: 650px) {
+            span {
+                font-family: "Monoton", cursive;
+                font-size: 1em;
+                vertical-align: middle !important;
+                //font-weight: bold;
+            }
+        }
+
+        @media (min-width: 650px) {
+            img {
+                width: 25%;
+                height: auto !important;
+                display: inline-flex;
+            }
+            span {
+                font-family: "Monoton", cursive;
+                font-size: 1em;
+                vertical-align: middle !important;
+                //font-weight: bold;
+            }
+        }
     }
 
-    @media (min-width: 650px) {
-      img {
-        width: 25%;
-        height: auto !important;
-        display: inline-flex;
-      }
-      span {
-        font-family: "Monoton", cursive;
-        font-size: 1em;
-        vertical-align: middle !important;
-        //font-weight: bold;
-      }
-    }
-  }
+    .vrm-logo-text-admin {
+        margin-bottom: 0px !important;
 
-  .vrm-logo-text-admin {
-    margin-bottom: 0px !important;
-
-    @media (min-width: 650px) {
-      img {
-        width: 25%;
-      }
-      span {
-        font-size: 1em;
-      }
+        @media (min-width: 650px) {
+            img {
+                width: 25%;
+            }
+            span {
+                font-size: 1em;
+            }
+        }
     }
-  }
 }
 
-/** DatePicker 
+/** DatePicker
 ** https://mymth.github.io/vanillajs-datepicker/
 **/
 @mixin date-picker {
-  div.datepicker {
-    div.datepicker-picker {
-      div.datepicker-header {
-        div.datepicker-controls {
-          button.prev-btn,
-          button.next-btn {
-            color: color(dark-blue);
-          }
-          button.view-switch {
-            color: color(blue);
-          }
-        }
-      }
-      div.datepicker-main {
-        div.datepicker-view {
-          div.days {
-            div.days-of-week {
-              span {
-                color: color(dark-blue);
-              }
-            }
-            div.datepicker-grid {
-              span.datepicker-cell {
-                color: color(black);
-                &.prev {
-                  color: color(dark-gray-5);
+    div.datepicker {
+        div.datepicker-picker {
+            div.datepicker-header {
+                div.datepicker-controls {
+                    button.prev-btn,
+                    button.next-btn {
+                        color: color(dark-blue);
+                    }
+                    button.view-switch {
+                        color: color(blue);
+                    }
                 }
+            }
+            div.datepicker-main {
+                div.datepicker-view {
+                    div.days {
+                        div.days-of-week {
+                            span {
+                                color: color(dark-blue);
+                            }
+                        }
+                        div.datepicker-grid {
+                            span.datepicker-cell {
+                                color: color(black);
+                                &.prev {
+                                    color: color(dark-gray-5);
+                                }
 
-                &.focused {
-                  background-color: color(light-blue);
-                  color: color(white);
-                }
+                                &.focused {
+                                    background-color: color(light-blue);
+                                    color: color(white);
+                                }
 
-                &:hover {
-                  background-color: color(gray);
-                  color: color(white);
+                                &:hover {
+                                    background-color: color(gray);
+                                    color: color(white);
+                                }
+                            }
+                        }
+                    }
                 }
-              }
             }
-          }
-        }
-      }
-      div.datepicker-footer {
-        div.datepicker-controls {
-          button.clear-btn {
-            background-color: color(red);
-            color: color(white);
-            border: none;
-            border-radius: 2px;
-            padding: 0.5rem 1rem;
-            margin-right: 1rem;
-            cursor: pointer;
-            &:hover {
-              background-color: color(red-dark);
+            div.datepicker-footer {
+                div.datepicker-controls {
+                    button.clear-btn {
+                        background-color: color(red);
+                        color: color(white);
+                        border: none;
+                        border-radius: 2px;
+                        padding: 0.5rem 1rem;
+                        margin-right: 1rem;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: color(red-dark);
+                        }
+                        // Font
+                        font-weight: bold;
+                    }
+                }
             }
-            // Font
-            font-weight: bold;
-          }
         }
-      }
     }
-  }
 }
 
 /**
 ** Sidebar Wrapper
 */
 @mixin sidebar-wrapper {
-  .sidebar-wrapper {
-    width: 13vw !important;
+    .sidebar-wrapper {
+        width: 13vw !important;
 
-    width: 15% !important;
+        width: 15% !important;
 
-    position: fixed !important;
-  }
+        position: fixed !important;
+    }
+}
+
+/**
+** Error
+*/
+@mixin error {
+    .error {
+        font-family: "Lato", sans-serif;
+        display: block;
+        color: color(red);
+        font-size: 12px;
+        font-weight: 400;
+    }
+}
+
+/**
+** Error
+*/
+@mixin required {
+    .required:after {
+        content: "*";
+        margin-left: 0.2rem;
+        color: red;
+    }
 }

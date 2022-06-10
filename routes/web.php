@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Vormia\SettingsController;
+use App\Models\Vormia\Setting;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,7 @@ $admin_path = "admin/pages";
 Route::view('/', "$admin_path.login");
 
 // Dashboard
-Route::view('/vrm/dashboard', "$admin_path.dashboard");
+Route::view('/vrm-dashboard', "$admin_path.dashboard");
 
 //Blogs
 Route::view('/vrm/blogs', "$admin_path.blogs.list");
@@ -119,6 +121,20 @@ Route::view('/vrm/controls/module', "$admin_path.controls.module");
 Route::view('/vrm/controls/inheritance', "$admin_path.controls.inheritance");
 
 //Settings
-Route::get('/vrm/settings/{path}', function ($state) use ($admin_path) {
-    return view("$admin_path.settings.$state");
+Route::prefix('vrm-settings')->group(function () {
+    Route::controller(SettingsController::class)->group(function () {
+        Route::get('/{view}', 'open');
+
+        //[UserController::class, 'show']
+        Route::post('/{state}',  [SettingsController::class, 'valid']);
+
+        //Route::match(['post', 'put'], '/{state}}',  [SettingsController::class, 'valid']);
+
+        /*
+
+        Route::post('/save', function ($save) {
+            //
+        });
+        */
+    });
 });

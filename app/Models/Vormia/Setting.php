@@ -11,4 +11,7 @@ class Setting extends Model
 
     // Disable Default Timestamps
     public $timestamps = false;
+
+    // Do not allow mass assignment
+    protected $guarded = ['setting_id'];
 }
