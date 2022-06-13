@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers\Vormia;
 
+use Illuminate\Support\Facades\Validator;
+
 use App\Http\Controllers\Controller;
-use App\Models\Vormia\Setting;
 use Illuminate\Http\Request;
+
+use App\Models\Vormia\Setting;
+use App\Models\Notify;
+
 use Illuminate\Support\Str;
 
 
@@ -36,7 +41,7 @@ class SettingsController extends Controller
     private $Upload = "admin/media"; //Upload Folder Name inside the public/admin/media
 
     private $Access = ""; // Access level for this controller
-    private $ParentRoute = "Settings"; // Parent Route Name Eg. vrm-settings
+    private $ParentRoute = "vrm-settings"; // Parent Route Name Eg. vrm-settings
     private $AllowedFile = null; //Set Default allowed file extension, remember you can pass this upon upload to override default allowed file type. jpg|jpeg|png|doc|docx|
 
     private $New = ''; // New
@@ -61,8 +66,7 @@ class SettingsController extends Controller
     /**
      * Global Settings {loadSettings}
      * Method is private and not accessible via the web
-     * @Todo:
-     * This method Load all settings from database via the PreLoad Model:: getSettings()
+     * Todo: This method Load all settings from database via the PreLoad Model:: getSettings()
      *
      * @param optional $view_name (string) Page Name (make sure to add $ThemePath/$MainFolder/$SubFolder/$page_name)
      *
@@ -88,8 +92,7 @@ class SettingsController extends Controller
     /**
      * Custom Settings {passedSettings}
      * Method is private and not accessible via the web
-     * @Todo:
-     * This method Load all settings for this Controller only
+     * Todo: This method Load all settings for this Controller only
      *
      * @param optional $addtionalData (array) any additional data to be passed on demand
      *
@@ -116,6 +119,7 @@ class SettingsController extends Controller
             'update' => url($this->Update),
             'destroy' => url($this->Delete),
             'manage' => url($this->Action),
+            'route' => $this->ParentRoute,
         ];
 
         // Other
@@ -133,8 +137,7 @@ class SettingsController extends Controller
     /**
      * Page View {show}
      * Method is private and not accessible via the web
-     * @Todo:
-     * This method is the only method that is accessible render the view/page visible via browser.
+     * Todo: This method is the only method that is accessible render the view/page visible via browser.
      *
      * @param  requred $data - (has all the values needed to render the page)
      * @param  optional $layout - (By default the layout is main)
@@ -157,15 +160,37 @@ class SettingsController extends Controller
     /**
      * Main {Index}
      * Method is public and accessible via the web
-     * @Todo:
-     * This method is the main settings page.
+     * Todo: This method is the main settings page.
      *
-     * @param  optional  $message - notification messag (By default, no message is displayed)
+     * @param  optional  $message - notification message (By default, no message is displayed)
      *
      * @return \Illuminate\Http\Response
      */
     public function index($message = '')
     {
+        // Load View Page Path
+        $view = 'general';
+        $page = Str::plural($this->MainFolder) . "/" . $this->SubFolder . $view;
+
+        // Load Settings
+        $data = $this->loadSettings($page);
+        $data['other']->view = $view;
+
+        // Setting
+        $getSetting = Setting::getSetting();
+        foreach ($getSetting as $key => $value) {
+            $set_key = key($value);
+            $setting[$set_key] = $value[$set_key];
+        }
+        // Settings
+        $data['thisSettings'] = (object) $setting;
+
+        //Notification
+        $notify = Notify::notify();
+        $data['notify'] = Notify::$notify($message);
+
+        //Open Page
+        return $this->show($data);
     }
 
     /**
@@ -175,7 +200,7 @@ class SettingsController extends Controller
      * This method is used to open a specific view/page (you can pass the view name/full_path and open will call show() method to render the view/page)
      *
      * @param required $view - (the view name/full_path to be rendered)
-     * @param  optional $message - notification messag (By default, no message is displayed)
+     * @param  optional $message - notification message (By default, no message is displayed)
      * @param  optional $layout - (By default the layout is main)
      *
      * @return \Illuminate\Http\Response
@@ -190,17 +215,17 @@ class SettingsController extends Controller
         $data['other']->view = $view;
 
         // Setting
-        $systemSettings = Setting::where('setting_type', 'general')->get()->map(function ($sett) {
-            return [$sett->setting_title => $sett->setting_value];
-        })->map(function ($item) {
-            foreach ($item as $key => $value) {
-                return [$key => $value];
-            }
-        });
+        $getSetting = Setting::getSetting($view);
+        foreach ($getSetting as $key => $value) {
+            $set_key = key($value);
+            $setting[$set_key] = $value[$set_key];
+        }
+        // Settings
+        $data['thisSettings'] = (object) $setting;
 
         //Notification
-        $notify = '';
-        $data['notify'] = $message;
+        $notify = Notify::notify();
+        $data['notify'] = Notify::$notify($message);
 
         //Open Page
         return $this->show($data, $layout);
@@ -209,8 +234,7 @@ class SettingsController extends Controller
     /**
      * Validation {valid}
      * Method is public and accessible via the web
-     * @Todo
-     * This method is used to validate the form data.
+     * Todo: This method is used to validate the form data.
      *
      * @param  \Illuminate\Http\Request  $request - (the request object)
      * @param  required $state - (what option to validate)
@@ -220,11 +244,11 @@ class SettingsController extends Controller
     public function valid(Request $request, $state = '')
     {
 
+        // Previus Page/Route/URI
+        // session()->flash('previous-route', $request->path());
+
         $allowed_files = (is_null($this->AllowedFile)) ? 'jpg|jpeg|png|doc|docx|pdf|xls|txt' : $this->AllowedFile; //Set Allowed Files
         $upoadDirectory = $this->Upload . "/"; //Upload Location
-
-        // Validate Form Data
-        // $validator = Validator::make($request->all(), $validate);
 
         //Check Validation
         if ($state == 'save') {
@@ -234,7 +258,8 @@ class SettingsController extends Controller
             $request->request->remove('view_name');
 
             // Validate Form Data
-            $validated = $request->validate([
+            $validator = Validator::make($request->all(), [
+                'setting_type' => "required|max:15|nullable",
                 'site_title' => "required|max:100",
                 'site_title_append' => "required|max:10",
                 'site_slogan' => "required|max:200",
@@ -246,11 +271,28 @@ class SettingsController extends Controller
                 'token_key' => "required|min:5|max:20",
             ]);
 
+            // On Validation Fail
+            if ($validator->fails()) {
+                session()->flash('notification', 'valid');
+                $error = Notify::error('Please check the form for errors.');
+
+                // Return Error Message
+                return redirect("$this->ParentRoute/$view_name")
+                    ->withErrors($validator)
+                    ->withInput()
+                    ->with(['valid' => $error]);
+            }
+
+            // Validate Form Data
+            $validated = $validator->validated();
+            $setting_type = $validated['setting_type'];
+            unset($validated['setting_type']);
+
             // Loop through all the validate data
             foreach ($validated as $key => $value) {
                 // Save to the database
                 $saveData = [
-                    'setting_type' => 'general',
+                    'setting_type' => $setting_type,
                     'setting_title' => $key,
                     'setting_value' => $value,
                     'setting_created_at' => date('Y-m-d H:i:s'),
@@ -261,35 +303,25 @@ class SettingsController extends Controller
             }
 
             // Notification
-            $notify = '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Success!</strong> Settings has been saved.
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>';
+            session()->flash('notification', 'success');
 
             // Open Page
-            return $this->open($view_name, $notify);
+            return $this->open($view_name, 'Updated Successfully');
         } else {
-            dd('failed');
+
+            dd($state);
+            // Notification
+            session()->flash('notification', 'info');
+
+            // Open Page
+            return $this->index('<strong>Info:</strong> Vormia failed to respond, unknown request.');
         }
-        /*
-        // Check if validation fails
-        if ($validator->fails()) {
-            // Return Error Message
-            return $validator->errors()->all();
-        } else {
-            // Return True
-            return true;
-        }
-        */
     }
 
     /**
      * Save {store}
      * Method is private and not accessible via the web
-     * @Todo:
-     * This method is used to save the form data. It utilizes the valid() method to validate the form data and Vormia\Setting Model
+     * Todo: This method is used to save the form data. It utilizes the valid() method to validate the form data and Vormia\Setting Model
      *
      * @param  requred $insertData
      *
@@ -312,8 +344,7 @@ class SettingsController extends Controller
     /**
      * Update {update}
      * Method is private and not accessible via the web
-     * @Todo:
-     * This method is used to update the form data. It utilizes the valid() method to validate the form data and Vormia\Setting Model
+     * Todo: This method is used to update the form data. It utilizes the valid() method to validate the form data and Vormia\Setting Model
      *
      * @param  requred $updateData
      *
@@ -324,6 +355,28 @@ class SettingsController extends Controller
     {
         // Update Form Data
         if (Setting::where('setting_title', $updateData['setting_title'])->update($updateData)) {
+            // Return Success
+            return true;
+        }
+
+        // Return Failed
+        return false;
+    }
+
+    /**
+     * Delete {destroy}
+     * Method is private and not accessible via the web
+     * Todo: This method is used to delete the stored data.
+     *
+     * @param  required $id - (the id of the data to be deleted) or you can pass as array of ids | match the column name => value
+     *
+     * @return \Illuminate\Http\Response
+     * - Success (True) or Failed (False)
+     */
+    private function destroy($id)
+    {
+        // Delete Form Data
+        if (Setting::destroy($id)) {
             // Return Success
             return true;
         }

@@ -15,16 +15,16 @@
                 <section class="vrm-nav-section" menu-type="content-top"></section>
 
                 <section class="vrm-nav-section" menu-type="content">
-                    <li class="sidebar-item has-sub active">
+                    <li class="sidebar-item has-sub {{ request()->is('vrm-blog/*') ? 'active' : '' }}">
                         <a href="#" class='sidebar-link'>
                             <i class="bi bi-file-earmark-word-fill vrm-icon"></i>
                             <span>Blogs</span>
                         </a>
-                        <ul class="submenu active">
-                            <li class="submenu-item active">
+                        <ul class="submenu {{ request()->is('vrm-blog/*') ? 'active' : '' }}">
+                            <li class="submenu-item {{ request()->is('vrm-blogs') ? 'active' : '' }}">
                                 <a href="{{ url('/vrm/blogs') }}">All</a>
                             </li>
-                            <li class="submenu-item">
+                            <li class="submenu-item {{ request()->is('vrm-blogs/add') ? 'active' : '' }}">
                                 <a href="{{ url('/vrm/blogs/add') }}">New</a>
                             </li>
                             <li class="submenu-item ">
@@ -154,17 +154,17 @@
                 <section class="vrm-nav-section" menu-type="setting-top"></section>
 
                 <section class="vrm-nav-section" menu-type="setting">
-                    <li class="sidebar-item  has-sub">
+                    <li class="sidebar-item  has-sub {{ request()->is('vrm-settings/*') ? 'active' : '' }}">
                         <a href="#" class='sidebar-link'>
                             <i class="bi bi-wrench vrm-icon"></i>
                             <span>Settings</span>
                         </a>
-                        <ul class="submenu ">
-                            <li class="submenu-item ">
+                        <ul class="submenu {{ request()->is('vrm-settings/*') ? 'active' : '' }}">
+                            <li class="submenu-item {{ request()->is('vrm-general/visibility') ? 'active' : '' }}">
                                 <a href="{{ url('/vrm-settings/visibility') }}">Visibility</a>
                             </li>
-                            <li class="submenu-item ">
-                                <a href="{{ url('/vrm-settings/system') }}">System</a>
+                            <li class="submenu-item {{ request()->is('vrm-settings/general*') ? 'active' : '' }}">
+                                <a href="{{ url('/vrm-settings/general') }}">General</a>
                             </li>
                             <li class="submenu-item ">
                                 <a href="{{ url('/vrm-settings/mail') }}">Mailing</a>

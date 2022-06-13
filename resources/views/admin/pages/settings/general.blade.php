@@ -30,10 +30,15 @@
             <div class="row">
                 <div class="col-md-8 col-sm-12">
                     <div class="card">
+
                         {!! $notify !!}
-                        <form action="{!! $links->store !!}" method="POST">
+                        @php
+                            $form_save = $links->route . '/general/save';
+                        @endphp
+                        <form action="{!! url($form_save) !!}" method="POST">
                             @csrf
                             <input type="hidden" name="view_name" value="{{ $other->view }}">
+                            <input type="hidden" name="setting_type" value="general">
 
                             <div class="card-body px-0">
                                 <div class="divider divider-left">
@@ -47,7 +52,7 @@
                                                 <label for="title" class="required">Site Title</label>
                                                 <input type="text"
                                                     class="form-control form-control-sm @error('site_title') is-invalid @enderror"
-                                                    value="{{ old('site_title') }}" name="site_title">
+                                                    value="{{ $thisSettings->site_title }}" name="site_title">
                                                 <span class="error">{{ $errors->first('site_title') }}</span>
                                             </div>
                                         </div>
@@ -59,7 +64,8 @@
                                                     <div class="form-check">
                                                         <input type="radio"
                                                             class="form-check-input @error('site_title_append') is-invalid @enderror"
-                                                            value="no" name="site_title_append">
+                                                            value="no" name="site_title_append"
+                                                            {{ $thisSettings->site_title_append == 'no' ? 'checked' : '' }}>
                                                         <label class="form-check-label" for="">
                                                             Don't
                                                         </label>
@@ -70,7 +76,8 @@
                                                     <div class="form-check">
                                                         <input type="radio"
                                                             class="form-check-input @error('site_title_append') is-invalid @enderror"
-                                                            value="after" name="site_title_append">
+                                                            value="after" name="site_title_append"
+                                                            {{ $thisSettings->site_title_append == 'after' ? 'checked' : '' }}>
                                                         <label class="form-check-label" for="">
                                                             After
                                                         </label>
@@ -80,7 +87,8 @@
                                                     <div class="form-check">
                                                         <input type="radio"
                                                             class="form-check-input @error('site_title_append') is-invalid @enderror"
-                                                            value="before" name="site_title_append">
+                                                            value="before" name="site_title_append"
+                                                            {{ $thisSettings->site_title_append == 'before' ? 'checked' : '' }}>
                                                         <label class="form-check-label" for="">
                                                             Before
                                                         </label>
@@ -98,7 +106,7 @@
                                                 <label for="title" class="required">Site Slogan</label>
                                                 <input type="text"
                                                     class="form-control form-control-sm @error('site_slogan') is-invalid @enderror"
-                                                    value="{{ old('site_slogan') }}" name="site_slogan">
+                                                    value="{{ $thisSettings->site_slogan }}" name="site_slogan">
                                                 <span class="error">{{ $errors->first('site_slogan') }}</span>
                                             </div>
                                         </div>
@@ -110,7 +118,7 @@
                                                 <label for="title" class="required">Site URL</label>
                                                 <input type="text"
                                                     class="form-control form-control-sm @error('site_url') is-invalid @enderror"
-                                                    value="{{ old('site_url') }}" name="site_url">
+                                                    value="{{ $thisSettings->site_url }}" name="site_url">
                                                 <small class="text-muted text-center">the site url for your
                                                     inner-links</small>
                                                 <span class="error">{{ $errors->first('site_url') }}</span>
@@ -124,7 +132,7 @@
                                                 <label for="title" class="required">Home Page URL</label>
                                                 <input type="text"
                                                     class="form-control form-control-sm @error('home_page_url') is-invalid @enderror"
-                                                    value="{{ old('home_page_url') }}" name="home_page_url">
+                                                    value="{{ $thisSettings->home_page_url }}" name="home_page_url">
                                                 <small class="text-muted text-center">first page visitor will see</small>
                                                 <span class="error">{{ $errors->first('home_page_url') }}</span>
                                             </div>
@@ -137,7 +145,7 @@
                                                 <label for="title" class="required">Base URL</label>
                                                 <input type="text"
                                                     class="form-control form-control-sm @error('base_url') is-invalid @enderror"
-                                                    value="{{ old('base_url') }}" name="base_url">
+                                                    value="{{ $thisSettings->base_url }}" name="base_url">
                                                 <small class="text-muted text-center">the base url for your assets</small>
                                                 <span class="error">{{ $errors->first('base_url') }}</span>
                                             </div>
@@ -157,7 +165,7 @@
                                                     <small>256-bit key</small></label>
                                                 <input type="text"
                                                     class="form-control form-control-sm @error('global_encryption_key') is-invalid @enderror"
-                                                    value="{{ old('global_encryption_key') }}"
+                                                    value="{{ $thisSettings->global_encryption_key }}"
                                                     name="global_encryption_key">
                                                 <small class="text-muted text-center">Will be shared with installed
                                                     add-ons</small>
@@ -174,7 +182,7 @@
                                                         key</small></label>
                                                 <input type="text"
                                                     class="form-control form-control-sm @error('encryption_key') is-invalid @enderror"
-                                                    value="{{ old('encryption_key') }}" name="encryption_key">
+                                                    value="{{ $thisSettings->encryption_key }}" name="encryption_key">
                                                 <small class="text-muted text-center">Private key be used while securing
                                                     password</small>
                                                 <span
@@ -190,7 +198,7 @@
                                                         Keys</small></label>
                                                 <input type="text"
                                                     class="form-control form-control-sm @error('token_key') is-invalid @enderror"
-                                                    value="{{ old('token_key') }}" name="token_key">
+                                                    value="{{ $thisSettings->token_key }}" name="token_key">
                                                 <small class="text-muted text-center">Private used for securing
                                                     tokens,cookies,
                                                     and session</small>

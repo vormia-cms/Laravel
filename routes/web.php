@@ -125,8 +125,9 @@ Route::prefix('vrm-settings')->group(function () {
     Route::controller(SettingsController::class)->group(function () {
         Route::get('/{view}', 'open');
 
-        //[UserController::class, 'show']
-        Route::post('/{state}',  [SettingsController::class, 'valid']);
+        // Update Settings
+        // Route::post('/{view}/{state}',  [SettingsController::class, 'valid']);
+        Route::post('/{view}/{state}', [SettingsController::class, 'valid'], 'gif');
 
         //Route::match(['post', 'put'], '/{state}}',  [SettingsController::class, 'valid']);
 
