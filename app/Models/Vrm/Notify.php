@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Notify extends Model
 {
-    use HasFactory;
-
     /**
      * Blank {blank}
      * Method is public and accessible via the web
@@ -44,11 +42,8 @@ class Notify extends Model
 
         // Alert
         $alert = "
-            <div class='alert alert-success alert-dismissible fade show' role='alert'>
+            <div class='alert alert-success' role='alert'>
                 $notify
-                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                    <span aria-hidden='true'>&times;</span>
-                </button>
             </div>
         ";
 
@@ -75,11 +70,8 @@ class Notify extends Model
 
         // Alert
         $alert = "
-            <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+            <div class='alert alert-danger' role='alert'>
                 $notify
-                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                    <span aria-hidden='true'>&times;</span>
-                </button>
             </div>
         ";
 
@@ -106,11 +98,8 @@ class Notify extends Model
 
         // Alert
         $alert = "
-            <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+            <div class='alert alert-warning' role='alert'>
                 $notify
-                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                    <span aria-hidden='true'>&times;</span>
-                </button>
             </div>
         ";
 
@@ -137,11 +126,8 @@ class Notify extends Model
 
         // Alert
         $alert = "
-            <div class='alert alert-info alert-dismissible fade show' role='alert'>
+            <div class='alert alert-info' role='alert'>
                 $notify
-                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                    <span aria-hidden='true'>&times;</span>
-                </button>
             </div>
         ";
 
