@@ -73,7 +73,5 @@ Route::group(['prefix' => 'vrm'], function () {
     });
 });
 
-// TODO: LOGIN
-Route::controller(App\Http\Controllers\Front\HomeController::class)->group(function () {
-    Route::get('/', 'index');
-});
+// TODO: LIVE WIRE
+Route::get('/', App\Livewire\LiveSetting::class)->name('home');
