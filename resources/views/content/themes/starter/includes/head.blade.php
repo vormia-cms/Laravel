@@ -8,3 +8,4 @@
 	{{-- Date --}}
 	<link rel="stylesheet" href="{{ asset($plugin_assets) }}/datepicker/css/datepicker-bs5.min.css">
 	<link rel="stylesheet" href="{{ asset($plugin_assets) }}/datepicker/css/datepicker.min.css">
+	<link rel="stylesheet" href="{{ asset($plugin_assets) }}/custom/css/style.min.css?{{ time() }}">

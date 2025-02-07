@@ -6,8 +6,10 @@ use Livewire\Component;
 use App\Models\Vrm\Notify;
 use App\Models\Vrm\Setting;
 use Illuminate\Support\Str;
+use Livewire\Attributes\On;
+use Illuminate\Support\Facades\Log;
 
-class HomeLivewire extends Component
+class LiveSetting extends Component
 {
 
     // PRIVATE VARIABLES
@@ -18,51 +20,32 @@ class HomeLivewire extends Component
     private $ParentRoute = ""; // Parent Route Name Eg. vrm-settings
     private $AllowedFile = null; //Set Default allowed file extension, remember you can pass this upon upload to override default allowed file type. jpg|jpeg|png|doc|docx|
 
-    private $New = ''; // New
-    private $Save = ''; // Add New
-    private $Edit = ''; // Edit
-    private $Update = ''; // Update
-    private $Delete = ''; // Delete
-    private $Action = ''; // Multiple Entry Action
-
-    private $HeaderName = ""; // (Optional) Name
-
-
     /**
      * Todo: All of your public variables for storing data will be here on top
-     * 
-     * ? By default we have created $data_form for storing form data
+     *
+     * ? By default we have created $form_data for storing form data & $passed_data for storing passed data between components
      * ? You can add yours
      */
+    public $notify;
     public $passed_data = [];
     public $form_data = [];
 
-    // Example
-    public $tokenName;
+    // Single Input
+    public $search = '';
 
     /**
      * Todo: Mounted Data
-     * 
+     *
      * ? This method is used to mount data to the component
      */
-    public function mount($covertype)
+    public function mount()
     {
         // Mount previous data from session
         $this->passed_data = session('passed-data', []);
 
-        // Mount Token Name
-        $this->tokenName = Str::random(10);
+        // Notify
+        $this->notify = '';
     }
-
-
-    /**
-     * Todo: Validation Rules
-     * 
-     * ? All of your validation rules will be here
-     */
-    protected $rules = [
-        'mail' => "required|email|min:2|exists:users,email",
-    ];
 
     /**
      * Global Settings {loadSettings}
@@ -101,18 +84,12 @@ class HomeLivewire extends Component
 
         // Links
         $setting['links'] = (object)[
-            'new' => $this->New,
-            'save' => $this->Save,
-            'edit' => $this->Edit,
-            'update' => $this->Update,
-            'delete' => $this->Delete,
-            'manage' => $this->Action,
             'route' => $this->ParentRoute,
         ];
 
         // Other
         $setting['other'] = (object)[
-            'headerName' => (!array_key_exists('headerName', $addtional_data)) ? $this->HeaderName : $addtional_data['headerName'],
+            'headerName' => (!array_key_exists('headerName', $addtional_data)) ? '' : $addtional_data['headerName'],
         ];
 
         // Header
@@ -127,20 +104,37 @@ class HomeLivewire extends Component
     }
 
     /**
-     * Page View {show}
-     * Method is private and not accessible via the web
+     * Todo: Handle Notification
+     * ? This method is used to handle notification
+     *
+     */
+    #[On('livesetting-notify')]
+    public function livesetting_notify(array $response = ['status' => null, 'message' => null])
+    {
+
+        // Values
+        $_status = array_key_exists('status', $response) ? $response['status'] : null;
+        $_message = array_key_exists('message', $response) ? $response['message'] : '';
+
+        //Notification
+        $notify = (is_null($_status)) ? Notify::notify() : $_status;
+        $this->notify = Notify::$notify($_message);
+
+        Log::info('Notify: ' . $this->notify);
+    }
+
+    /**
+     * Method is used to render the view/page visible via browser.
      * Todo: This method is the only method that is accessible render the view/page visible via browser.
-     *
-     * @param  requred $data - (has all the values needed to render the page)
-     * @param  optional $layout - (By default the layout is main)
-     *
-     * @return \Illuminate\Http\Response
      */
     public function render()
     {
 
-        // Load View Page Path
-        $view = 'home';
+        // Page Path & Layout
+        $view = 'setting';
+        $layout_name = 'main';
+
+        // Page
         $page = Str::plural($this->MainFolder) . $this->SubFolder .  "/$view";
 
         // Load Settings
@@ -148,59 +142,41 @@ class HomeLivewire extends Component
         $data['other']->view = $view;
 
         //Notification
-        $notify = Notify::notify();
-        $data['notify'] = Notify::$notify();
+        $data['notify'] =  $this->notify;
 
         // This page & layout
-        $_this_page = $data['theme_dir'] . '/pages/' . $data['page_name'];
-        $_this_layout = $data['theme_dir'] . '/layouts/main';
+        $_this_page = $data['theme_dir'] . "/pages/" . $data['page_name'];
+        $_this_layout = $data['theme_dir'] . "/layouts/livewire/$layout_name";
 
         // Render
         return view($_this_page, $data)->layout($_this_layout, Setting::preLoad());
     }
 
+    /* --------------------------------------------------------------------------------------------- */
+
     /**
-     * Todo: Demo Saving Data
+     * Todo: Demo Listen to Input Event
      *
-     * ? This method is used to save data to the database
-     * ? Is a demo method that will validate and save data to the user_tokens
-     * 
-     * ? What you need is a valid user email and token name
+     * ? This method is used listen to an iput event
+     * ? In this case we're listening to input for search
+     *
+     * ? We're listening using wire:model.live="search"
      */
-    public function store()
+    public function keydownSearch()
     {
         // Validate Data
-        $this->validate();
+        $validated = $this->validate([
+            'search' => 'nullable|string',
+        ]);
 
-        // Get mounted data
-        $token_name = strtolower(trim($this->tokenName));
+        // Add Data to Session
+        $data['search'] = $validated['search'];
+        session(['passed-data' => $data]);
 
-        // Failing validation will automatically redirect back with errors
-        if (strlen($token_name) > 5) {
-            // Notification
-            session()->flash('notification', 'error');
+        // Dispatch event to trigger results component
+        $this->dispatch('search-initiated', $this->search);
 
-            // Open Page
-            return redirect()->back()->with('message', '<strong>Error:</strong> Token is short long. Force error message');
-        }
-
-        // Generate Token
-        $_token = Str::random(10);
-
-        // Assign Token to Form Data
-        $this->form_data['token'] = $_token;
-
-        // Add data to session incase you wish to pass to next component
-        $validated = array_merge($this->passed_data, $this->form_data);
-        session()->put('passed-data', $this->validated);
-
-        // Notification
-        session()->flash('notification', 'success');
-
-        // Open Page
-        return redirect()->back()->with('message', '<strong>Success:</strong> Action was successful');
-
-        // Redirect to the next step
-        $this->redirectRoute('home'); // Ensure route is defined
+        // Reset Edit
+        $this->dispatch('reset-edit-initiated');
     }
 }
