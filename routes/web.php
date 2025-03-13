@@ -13,9 +13,9 @@ Route::controller(App\Http\Controllers\Admin\LoginController::class)->group(func
 });
 // ? Vormia Manage
 Route::group(['prefix' => 'vrm'], function () {
-    Route::middleware([CheckRolePermission::class . ':permission'])->group(function () {
+    Route::middleware([CheckRolePermission::class . ':permissions'])->group(function () {
 
-        Route::middleware([CheckRolePermission::class . ':user'])->group(function () {
+        Route::middleware([CheckRolePermission::class . ':users'])->group(function () {
             // ? Users
             Route::controller(App\Http\Controllers\Admin\UserController::class)->group(function () {
                 Route::get('/users', 'index');
